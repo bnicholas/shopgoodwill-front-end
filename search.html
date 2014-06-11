@@ -1,0 +1,54 @@
+<form novalidate ng-submit="submit()" role="form" name="searchForm">
+  <div class="form-group">
+    <select ng-model="search.seller" ng-change="submit()">
+      <option value="57">CA Long Beach</option>
+      <option value="165">CA Los Angeles</option>
+      <option value="78">CA Ontario</option>
+      <option value="162">CA Sacramento</option>
+      <option value="12">CA San Diego</option>
+      <option value="119">CA San Jose</option>
+      <option value="2">CA Santa Ana</option>
+      <option value="120">CA Santa Rosa</option>
+      <option value="49">CA Stockton</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input ng-model="search.term" name="term" type="text" placeholder="Type ye words if ye dare.">
+    <a href="#" ng-click="clear()">Clear</a>
+  </div>
+  <div class="form-group">
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_0"   value="0"><label for="cat_0">All</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_133" value="133"><label for="cat_133">Summer Paradise</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_1"   value="1"><label for="cat_1">Antiques</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_15"  value="15"><label for="cat_15">Art</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_336" value="336"><label for="cat_336">Bath &amp; Body</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_99"  value="99"><label for="cat_99">Books</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_132" value="132"><label for="cat_132">Old Books</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_128" value="128"><label for="cat_128">Children's Books</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_74"  value="74"><label for="cat_74">Book Collections/Sets</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_75"  value="75"><label for="cat_75">Movies</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_79"  value="79"><label for="cat_79">Music</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_170" value="170"><label for="cat_170">Cameras &amp; Camcorders</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_175" value="175"><label for="cat_175">Old Cameras</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_10"  value="10"><label for="cat_10">Clothing</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_4"   value="4"><label for="cat_4">Collectibles</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_7"   value="7"><label for="cat_7">Computers &amp; Electronics</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_8"   value="8"><label for="cat_8">Crafts &amp; Hobbies</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_195" value="195"><label for="cat_195">For The Home</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_14"  value="14"><label for="cat_14">Glass</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_6"   value="6"><label for="cat_6">Jewelry &amp; Gemstones</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_113" value="113"><label for="cat_113">Miscellaneous</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_13"  value="13"><label for="cat_13">Musical Instruments</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_215" value="215"><label for="cat_215">Office Supplies</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_34"  value="34"><label for="cat_34">Pets</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_115" value="115"><label for="cat_115">Religious Items</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_364" value="364"><label for="cat_364">Science &amp; Education</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_18"  value="18"><label for="cat_18">Seasonal &amp; Holiday</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_12"  value="12"><label for="cat_12">Sports</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_20"  value="20"><label for="cat_20">Tableware and Kitchenware</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_114" value="114"><label for="cat_114">Tools</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_9"   value="9"><label for="cat_9">Toys/Dolls/Games</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_23"  value="23"><label for="cat_23">Transportation</label>
+    <input ng-change="submit()" ng-model="search.category" type="radio" name="category" id="cat_427" value="427"><label for="cat_427">Travel/Luggage</label>
+  </div>
+</form>
