@@ -30,7 +30,8 @@ var bower_components = [
   './bower_components/angular/angular.js',
   './bower_components/angular-masonry/angular-masonry.js',
   './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
-  './bower_components/bootstrap-sass/dist/js/bootstrap.js'
+  './bower_components/bootstrap-sass/dist/js/bootstrap.js',
+  './bower_components/headroom.js/dist/headroom.js'
 ];
 
 gulp.task('vendorjs', function() {
@@ -51,7 +52,7 @@ gulp.task('javascript', function() {
 gulp.task('sass', function() {
   gulp.src('./styles/sass/*.sass')
   .pipe(sass({'quiet': true }))
-  .pipe(prefix("last 1 version"))
+  .pipe(prefix("last 1 version", "> 1%"))
   .pipe(minifyCSS())
   .pipe(rename('styles.min.css'))
   .pipe(gulp.dest('./styles/'));

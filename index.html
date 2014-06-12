@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>shopgoodwill ... better</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
     <!--
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
@@ -24,22 +24,18 @@
     -->
     <script src="javascripts/vendor.min.js"></script>
 </head>
-<body>
-  
-  
-  <div class="container-fluid" ng-app="goodwillApp" ng-controller='AuctionController'>
-    <div class="row">
-      <div class="col-lg-12">
-        <div ng-include="'search.html'"></div>
-      </div>
-    </div>
-    
-    <hr>
+<body ng-app="goodwillApp" ng-controller='AuctionController'>
 
+  <header>
+    <div ng-include="'search.html'"></div>
+  </header>
+  
+  <div class="container-fluid">
+    
     <div class="results">
       <div ng-show='auctions.empty'>So ... I don't know how to say this. But there's no results. Sorry about that.</div>
 
-      <div infinite-scroll-immediate-check="false" infinite-scroll="auctions.getPage()" infinite-scroll-distance="1" infinite-scroll-disabled='auctions.busy' class="auctions" id="results" >
+      <div infinite-scroll-immediate-check="false" infinite-scroll="auctions.getPage()" infinite-scroll-distance="5" infinite-scroll-disabled='auctions.busy' class="auctions" id="results" >
         <div class="masonry" masonry="{ transitionDuration: '.3s', gutter: 10, isFitWidth: true }">
           <div class="masonry-brick auction" ng-repeat="auction in auctions.items">
             <div class="info">

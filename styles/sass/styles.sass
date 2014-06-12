@@ -1,7 +1,24 @@
 @import 'bootstrap'
 
+$nav-height: 140px
+
 body
   background: #fff
+  padding-top: $nav-height
+
+.headroom
+  background: #fff
+  padding: 10px 20px 20px 20px
+  position: fixed
+  top: 0
+  z-index: 999
+  transition: transform 200ms linear
+
+.headroom--pinned
+  transform: translateY(0%)
+
+.headroom--unpinned
+  transform: translateY(-100%)
 
 ul
   margin: 0
