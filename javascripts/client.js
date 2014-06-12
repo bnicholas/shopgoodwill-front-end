@@ -1,12 +1,8 @@
 'use strict';
 
-var goodwillApp = angular.module('goodwillApp', ['infinite-scroll']);
-var urlPrefix = "http://localhost:5000/";
+var goodwillApp = angular.module('goodwillApp', ['infinite-scroll', 'wu.masonry']);
+var urlPrefix = "http://goodwillapi.herokuapp.com/";
 // var favorites = window.localStorage["favorites"]
-
-// CHECK IF THERE IS A LOCALSTORAGE INSTANCE OF FAVORITES
-// localStorage["favorites"] = [];
-
 
 goodwillApp.controller('AuctionController', function($scope, $http, AuctionsFactory) {
   
@@ -19,8 +15,7 @@ goodwillApp.controller('AuctionController', function($scope, $http, AuctionsFact
 
   // FAVORITES
   $scope.favorite = function(){
-    localStorage.favorites.push(this.auction.itemNumber);
-    // click to add or remove from localStorage
+    console.log("click");
   };
   
   // SEARCH
@@ -73,6 +68,7 @@ goodwillApp.factory('AuctionsFactory', function($http) {
   };
 
   AuctionsFactory.prototype.getPage = function($scope) {
+
     if(this.atend) {
       return;
     };
@@ -103,7 +99,6 @@ goodwillApp.factory('AuctionsFactory', function($http) {
           };
           self.page = self.page + 1
           self.busy = false;  
-
         })
         .error(function(data, status) {
           self.empty = true;

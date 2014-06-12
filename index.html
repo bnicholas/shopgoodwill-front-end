@@ -2,13 +2,27 @@
 <html lang="en" >
 <head>
     <meta charset="utf-8" />
-    <title>Example App</title>
+    <title>shopgoodwill ... better</title>
     <link rel="stylesheet" href="styles/styles.css">
-    
-    <script src="javascripts/vendor/jquery.min.js"></script>
-    <script src="javascripts/vendor/angular.min.js"></script>
-    <script src="javascripts/vendor/ng-infinite-scroll.min.js"></script>
-    
+    <!--
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/doc-ready/doc-ready.js"></script>
+    <script src="bower_components/matches-selector/matches-selector.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/masonry/masonry.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/bootstrap-sass/dist/js/bootstrap.js"></script>
+    -->
+    <script src="javascripts/vendor.min.js"></script>
 </head>
 <body>
   
@@ -17,43 +31,37 @@
     <div class="row">
       <div class="col-lg-12">
         <div ng-include="'search.html'"></div>
-        <!-- <form novalidate role="form" name="searchForm">
-          <span ng-repeat="category in categories">
-            <label for="cat-{{category.id}}">{{category.name}}</label>
-            <input type="radio" id="cat-{{category.id}}" value="{{category.id}}" ng-model="category" ng-change="change()">
-          </span>
-        </form> -->
       </div>
     </div>
     
     <hr>
-    <!-- col-lg-2 col-md-3 col-sm-3 col-xs-6 -->
-  
+
     <div class="results">
       <div ng-show='auctions.empty'>So ... I don't know how to say this. But there's no results. Sorry about that.</div>
 
-      <div infinite-scroll-immediate-check="false" infinite-scroll="auctions.getPage()" infinite-scroll-distance="5" infinite-scroll-disabled='auctions.busy' class="auctions" id="results" >
-
-        <div ng-repeat="auction in auctions.items" class="auction">
-          <div class="info">
-            <span class="price">${{auction.itemPrice}}</span>
-            <span class="ending">{{auction.itemEnd}}</span>
-            <span class="bids">{{auction.itemBids}} Bids</span>
-            <a ng-click="favorite()" href="#" rel="{{auction.itemNumber}}" class="favorite">*</a>
+      <div infinite-scroll-immediate-check="false" infinite-scroll="auctions.getPage()" infinite-scroll-distance="1" infinite-scroll-disabled='auctions.busy' class="auctions" id="results" >
+        <div class="masonry" masonry="{ transitionDuration: '.3s', gutter: 10, isFitWidth: true }">
+          <div class="masonry-brick auction" ng-repeat="auction in auctions.items">
+            <div class="info">
+              <span class="price">${{auction.itemPrice}}</span>
+              <span class="ending">{{auction.itemEnd}}</span>
+              <span class="bids">{{auction.itemBids}} Bids</span>
+              <a ng-click="favorite()" href="#" rel="{{auction.itemNumber}}" class="favorite">*</a>
+            </div>
+            <a href="{{auction.itemURL}}" target="_blank">
+              <img ng-src="{{auction.itemImage}}" alt="">
+              <!-- {{auction.itemName}} {{auction.itemId}} {{auction.itemNumber}}  -->
+            </a>
           </div>
-          <a href="{{auction.itemURL}}" target="_blank">
-            <img ng-src="{{auction.itemImage}}" alt="">
-            <!-- {{auction.itemName}} {{auction.itemId}} {{auction.itemNumber}}  -->
-          </a>
         </div>
       
       </div>
-      <div ng-show='auctions.busy'>Loading data...</div>
+      <div class="loading" ng-show='auctions.busy'>Loading data...</div>
     </div>
   
   </div>
   
-  <script src="javascripts/client.js"></script>  
+  <script src="javascripts/client.js"></script>
 
 </body>
 </html>

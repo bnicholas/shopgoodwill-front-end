@@ -1,0 +1,31 @@
+{
+  "name": "goodwill",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bnicholas/goodwill-angular",
+  "authors": [
+    "Brian Nicholas <uibri@me.com>"
+  ],
+  "description": "angular.js frontend for scraping API for shopgoodwill.com",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.17",
+    "jquery": "~2.1.1",
+    "masonry": "~3.1.5",
+    "imagesloaded": "~3.1.5",
+    "ngInfiniteScroll": "~1.1.2",
+    "bootstrap-sass": "~3.0.2",
+    "angular-masonry": "~0.8.1"
+  }
+}
