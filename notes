@@ -1,0 +1,10 @@
+SELLERS
+All option
+Populate Sellers from JSON
+
+CATEGORIES
+Work on some kind of drilldown
+
+FAVORITES
+Make a favorites array in memory from localStorage
+When it changes I'll just JSON encode it and persist it to local storage

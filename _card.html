@@ -1,0 +1,11 @@
+<div class="auction">
+  <div class="info">
+    <span class="price">${{card.itemPrice}}</span>
+    <span class="ending">{{card.itemEnd}}</span>
+    <span class="bids">{{card.itemBids}} Bids</span>
+    <a ng-click="favorite()" href="#" rel="{{card.itemNumber}}" class="favorite">*</a>
+  </div>
+  <a class="photo_wrapper" style="height:{{card.imageRatio*240}}px" href="{{card.itemURL}}" target="_blank">
+    <img class="ng-imageloading" ng-src="{{card.itemImage}}" alt="">
+  </a>
+</div>

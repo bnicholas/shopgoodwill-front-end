@@ -28,9 +28,21 @@ var bower_components = [
   './bower_components/masonry/masonry.js',
   './bower_components/imagesloaded/imagesloaded.js',
   './bower_components/angular/angular.js',
+  './bower_components/angular-deckgrid/angular-deckgrid.js',
   './bower_components/angular-masonry/angular-masonry.js',
   './bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
-  './bower_components/bootstrap-sass/dist/js/bootstrap.js',
+  './bower_components/bootstrap-sass/js/affix.js',
+  './bower_components/bootstrap-sass/js/alert.js',
+  './bower_components/bootstrap-sass/js/button.js',
+  './bower_components/bootstrap-sass/js/carousel.js',
+  './bower_components/bootstrap-sass/js/collapse.js',
+  './bower_components/bootstrap-sass/js/dropdown.js',
+  './bower_components/bootstrap-sass/js/modal.js',
+  './bower_components/bootstrap-sass/js/tooltip.js',
+  './bower_components/bootstrap-sass/js/popover.js',
+  './bower_components/bootstrap-sass/js/scrollspy.js',
+  './bower_components/bootstrap-sass/js/tab.js',
+  './bower_components/bootstrap-sass/js/transition.js',
   './bower_components/headroom.js/dist/headroom.js'
 ];
 
@@ -42,11 +54,14 @@ gulp.task('vendorjs', function() {
 });
 
 gulp.task('javascript', function() {
-  gulp.src('./javascripts/client.js')
+  gulp.src('./javascripts/client/*.js')
   .pipe(jshint.reporter('default'))
-  .pipe(uglify())
-  .pipe(rename('client.min.js'))
+  // .pipe(uglify())
+  .pipe(concat('client.js'))
+  // .pipe(rename('client.min.js'))
   .pipe(gulp.dest('./javascripts/'));
+  now = new Date();
+  console.log("javascript built at: "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
 });
 
 gulp.task('sass', function() {
@@ -60,6 +75,6 @@ gulp.task('sass', function() {
 });
 
 gulp.watch('./styles/sass/*.sass', ['sass']);
-gulp.watch('./javascripts/client.js', ['javascript']);
+gulp.watch('./javascripts/client/*.js', ['javascript']);
 
 gulp.task('default', ['sass', 'javascript', 'vendorjs']);
