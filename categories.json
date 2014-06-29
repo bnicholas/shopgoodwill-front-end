@@ -1,0 +1,2639 @@
+[
+  {
+    "parent": false,
+    "catName": "All",
+    "catId": 0,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "** Summer Paradise **",
+    "catId": 133,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Antiques",
+    "catId": 1,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Art",
+    "catId": 15,
+    "children": true
+  },
+  {
+    "parent": "Art",
+    "catName": "Drawings",
+    "catId": 70,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Indigenous Art",
+    "catId": 368,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Paintings",
+    "catId": 71,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Photography",
+    "catId": 69,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Posters",
+    "catId": 234,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Pottery",
+    "catId": 116,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Prints",
+    "catId": 235,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": "Art",
+    "catName": "Sculptures",
+    "catId": 72,
+    "parentId": 15,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Bath &amp; Body",
+    "catId": 336,
+    "children": true
+  },
+  {
+    "parent": "Bath &amp; Body",
+    "catName": "Beauty Products",
+    "catId": 339,
+    "parentId": 336,
+    "children": false
+  },
+  {
+    "parent": "Bath &amp; Body",
+    "catName": "Fragrances",
+    "catId": 337,
+    "parentId": 336,
+    "children": false
+  },
+  {
+    "parent": "Bath &amp; Body",
+    "catName": "Personal Care",
+    "catId": 338,
+    "parentId": 336,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Books/Movies/Music",
+    "catId": 2,
+    "children": true
+  },
+  
+  {
+    "parent": "Books/Movies/Music",
+    "catName": "Books",
+    "catId": 99,
+    "parentId": 2,
+    "children": true
+  },
+  {
+    "parent": "Books",
+    "catName": "Antique/Collectible",
+    "catId": 132,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Audiobooks",
+    "catId": 437,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Children's",
+    "catId": 128,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Collections/Sets",
+    "catId": 74,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Cookbooks",
+    "catId": 127,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Reference",
+    "catId": 256,
+    "parentId": 99,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Religion",
+    "catId": 220,
+    "parentId": 99,
+    "children": false
+  },
+  
+  {
+    "parent": "Books",
+    "catName": "Fiction",
+    "catId": 125,
+    "parentId": 99,
+    "children": true
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Action",
+    "catId": 244,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Classic Literature",
+    "catId": 245,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Drama",
+    "catId": 247,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Fantasy",
+    "catId": 248,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Modern Literature",
+    "catId": 246,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Mystery",
+    "catId": 252,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Mythology",
+    "catId": 253,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Romance",
+    "catId": 251,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Sci-Fi",
+    "catId": 249,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Fiction",
+    "catName": "Western",
+    "catId": 250,
+    "parentId": 125,
+    "children": false
+  },
+  {
+    "parent": "Books",
+    "catName": "Non-Fiction",
+    "catId": 126,
+    "parentId": 99,
+    "children": true
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Architecture &amp; Design",
+    "catId": 278,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Art &amp; Photography",
+    "catId": 257,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Biography &amp; Autobiography",
+    "catId": 254,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Business",
+    "catId": 258,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Computers &amp; Internet",
+    "catId": 259,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Education",
+    "catId": 275,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Family",
+    "catId": 260,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Games &amp; Puzzles",
+    "catId": 272,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Health &amp; Fitness",
+    "catId": 261,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "History",
+    "catId": 255,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Hobbies &amp; Crafts",
+    "catId": 262,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Home &amp; Garden",
+    "catId": 271,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Humor",
+    "catId": 273,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Law &amp; Government",
+    "catId": 263,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Military",
+    "catId": 264,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Outdoor &amp; Nature",
+    "catId": 277,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Performing Arts",
+    "catId": 265,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Philosophy",
+    "catId": 266,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Psychology",
+    "catId": 276,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Science &amp; Technology",
+    "catId": 267,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Self Help",
+    "catId": 270,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Social Sciences",
+    "catId": 268,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Sports &amp; Recreation",
+    "catId": 269,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Non-Fiction",
+    "catName": "Transportation",
+    "catId": 274,
+    "parentId": 126,
+    "children": false
+  },
+  {
+    "parent": "Books/Movies/Music",
+    "catName": "Movies",
+    "catId": 75,
+    "parentId": 2,
+    "children": true
+  },
+  {
+    "parent": "Movies",
+    "catName": "Blu-ray Disc",
+    "catId": 241,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Movies",
+    "catName": "DVDs",
+    "catId": 76,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Movies",
+    "catName": "HD DVD",
+    "catId": 242,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Movies",
+    "catName": "Laserdisc",
+    "catId": 243,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Movies",
+    "catName": "Reels",
+    "catId": 78,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Movies",
+    "catName": "VHS",
+    "catId": 77,
+    "parentId": 75,
+    "children": false
+  },
+  {
+    "parent": "Books/Movies/Music",
+    "catName": "Music",
+    "catId": 79,
+    "parentId": 2,
+    "children": true
+  },
+  {
+    "parent": "Music",
+    "catName": "Cassette Tapes",
+    "catId": 81,
+    "parentId": 79,
+    "children": false
+  },
+  {
+    "parent": "Music",
+    "catName": "CDs",
+    "catId": 80,
+    "parentId": 79,
+    "children": false
+  },
+  {
+    "parent": "Music",
+    "catName": "Records/8-Track",
+    "catId": 82,
+    "parentId": 79,
+    "children": false
+  },
+  {
+    "parent": "Music",
+    "catName": "Sheet Music",
+    "catId": 83,
+    "parentId": 79,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Cameras &amp; Camcorders",
+    "catId": 170,
+    "children": true
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Camcorders",
+    "catId": 173,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Digital Cameras",
+    "catId": 171,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Film Cameras",
+    "catId": 172,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Lenses &amp; Accessories",
+    "catId": 174,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Security &amp; Surveillance",
+    "catId": 394,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": "Cameras &amp; Camcorders",
+    "catName": "Vintage Cameras",
+    "catId": 175,
+    "parentId": 170,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Clothing",
+    "catId": 10,
+    "children": true
+  },
+  {
+    "parent": "Clothing",
+    "catName": "Baby",
+    "catId": 453,
+    "parentId": 10,
+    "children": false
+    
+  },
+  {
+    "parent": "Clothing",
+    "catName": "Children's Clothing",
+    "catId": 29,
+    "parentId": 10,
+    "children": true
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Accessories",
+    "catId": 166,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Athletic Apparel",
+    "catId": 346,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Dresses",
+    "catId": 160,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Formal",
+    "catId": 205,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Hats",
+    "catId": 236,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Hoodies",
+    "catId": 363,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Jeans",
+    "catId": 425,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Outerwear",
+    "catId": 142,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Pants",
+    "catId": 143,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Retro/Vintage",
+    "catId": 206,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Shirts",
+    "catId": 144,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Shoes",
+    "catId": 163,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Shorts",
+    "catId": 322,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Skirts",
+    "catId": 400,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Children's Clothing",
+    "catName": "Swimwear",
+    "catId": 362,
+    "parentId": 29,
+    "children": false
+  },
+  {
+    "parent": "Clothing",
+    "catName": "Eyewear",
+    "catId": 169,
+    "parentId": 10,
+    "children": false
+  },
+  {
+    "parent": "Clothing",
+    "catName": "Men's Clothing",
+    "catId": 28,
+    "parentId": 10,
+    "children": true
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Accessories",
+    "catId": 165,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Athletic Apparel",
+    "catId": 347,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Blazers",
+    "catId": 357,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Formalwear",
+    "catId": 145,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Hats",
+    "catId": 238,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Hoodies",
+    "catId": 358,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Jeans",
+    "catId": 320,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Outerwear",
+    "catId": 146,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Pants",
+    "catId": 147,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Retro/Vintage",
+    "catId": 167,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Shirts",
+    "catId": 148,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Shoes",
+    "catId": 161,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Shorts",
+    "catId": 319,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Suits",
+    "catId": 150,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Sweaters",
+    "catId": 149,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Swimwear",
+    "catId": 360,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Men's Clothing",
+    "catName": "Vests",
+    "catId": 414,
+    "parentId": 28,
+    "children": false
+  },
+  {
+    "parent": "Clothing",
+    "catName": "Women's Clothing",
+    "catId": 27,
+    "parentId": 10,
+    "children": true
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Accessories",
+    "catId": 164,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Athletic Apparel",
+    "catId": 348,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Blazers",
+    "catId": 355,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Dresses",
+    "catId": 151,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Formalwear",
+    "catId": 152,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Hats",
+    "catId": 237,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Hoodies",
+    "catId": 356,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Intimates",
+    "catId": 433,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Jeans",
+    "catId": 153,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Maternity",
+    "catId": 361,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Outerwear",
+    "catId": 154,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Pants",
+    "catId": 155,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Purses",
+    "catId": 103,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Retro/Vintage",
+    "catId": 168,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Shirts/Blouses",
+    "catId": 156,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Shoes",
+    "catId": 162,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Shorts",
+    "catId": 321,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Skirts",
+    "catId": 157,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Suits",
+    "catId": 159,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Sweaters",
+    "catId": 158,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Swimwear",
+    "catId": 359,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": "Women's Clothing",
+    "catName": "Vests",
+    "catId": 408,
+    "parentId": 27,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Collectibles",
+    "catId": 4,
+    "children": true
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Action Figures, Maquettes &amp; Mini Busts",
+    "catId": 367,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Advertising",
+    "catId": 434,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Bells",
+    "catId": 386,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Clocks",
+    "catId": 36,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Coca-Cola Memorabilia",
+    "catId": 419,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Coin Banks",
+    "catId": 378,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Coins and Paper Money",
+    "catId": 231,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Collector Plates",
+    "catId": 140,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Comic Books",
+    "catId": 37,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Cookie Jars",
+    "catId": 325,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Cups-, Trays, Vases",
+    "catId": 39,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Die Cast Cars &amp; Trucks",
+    "catId": 448,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Figurines",
+    "catId": 344,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Fraternal Organizations",
+    "catId": 393,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Historical Documents",
+    "catId": 105,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Hollywood Memorabilia",
+    "catId": 41,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Disney",
+    "catId": 422,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Lighters",
+    "catId": 407,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Local Interest",
+    "catId": 382,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Lunch Boxes",
+    "catId": 42,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Military Memorabilia",
+    "catId": 106,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Military Uniforms",
+    "catId": 327,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Music Boxes",
+    "catId": 345,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Music Memorabilia",
+    "catId": 122,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Music Memorabilia",
+    "catName": "Beatles",
+    "catId": 421,
+    "parentId": 122,
+    "children": false
+  },
+  {
+    "parent": "Music Memorabilia",
+    "catName": "Elvis",
+    "catId": 420,
+    "parentId": 122,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Plush Toys",
+    "catId": 35,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Post Cards/Photographs/Stationery",
+    "catId": 43,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Salt &amp; Pepper Shakers",
+    "catId": 326,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Spoons",
+    "catId": 343,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Sports",
+    "catId": 390,
+    "parentId": 4,
+    "children": true
+  },
+  {
+    "parent": "Sports",
+    "catName": "Baseball",
+    "catId": 409,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Sports",
+    "catName": "Basketball",
+    "catId": 410,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Sports",
+    "catName": "Football",
+    "catId": 411,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Sports",
+    "catName": "Hockey",
+    "catId": 412,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Sports",
+    "catName": "NASCAR",
+    "catId": 413,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Sports",
+    "catName": "Sports Cards/Trading Cards",
+    "catId": 44,
+    "parentId": 390,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Stamps-",
+    "catId": 230,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": "Collectibles",
+    "catName": "Trains",
+    "catId": 232,
+    "parentId": 4,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Computers &amp; Electronics",
+    "catId": 7,
+    "children": true
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Car Audio",
+    "catId": 366,
+    "parentId": 7,
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Computers",
+    "catId": 30,
+    "parentId": 7,
+    "children": true
+  },
+  {
+    "parent": "Computers",
+    "catName": "Accessories",
+    "catId": 179,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Desktops",
+    "catId": 177,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Laptops",
+    "catId": 176,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Laptops Apple",
+    "catId": 370,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Laptops Parts &amp; Repair",
+    "catId": 452,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Laptops- > Refurbished",
+    "catId": 451,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Networking",
+    "catId": 350,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Peripherals",
+    "catId": 178,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Software",
+    "catId": 117,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers",
+    "catName": "Tablets",
+    "catId": 365,
+    "parentId": 30,
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Home &amp; Business Phones",
+    "catId": 380,
+    "parentId": 7,
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Gaming Systems &amp; Games",
+    "catId": 33,
+    "parentId": 7,
+    "children": false
+  },
+  {
+   "parent": "Gaming Systems &amp; Games",
+   "catName" : "Atari",
+   "catId": "atari",
+   "parentId": 33,
+   "children": true
+  },
+  {
+    "parent": "Atari",
+    "catName": "2600",
+    "catId": 305,
+    "parentId": "atari",
+    "children": false
+  },
+  {
+    "parent": "Atari",
+    "catName": "5200",
+    "catId": 306,
+    "parentId": "atari",
+    "children": false
+  },
+  {
+    "parent": "Atari",
+    "catName": "7800",
+    "catId": 307,
+    "parentId": "atari",
+    "children": false
+  },
+  {
+    "parent": "Atari",
+    "catName": "Jaguar",
+    "catId": 308,
+    "parentId": "atari",
+    "children": false
+  },
+  {
+    "parent": "Atari",
+    "catName": "Lynx",
+    "catId": 309,
+    "parentId": "atari",
+    "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "ColecoVision",
+    "catId": 311,
+    "parentId": 33,
+    "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "Intellivision",
+    "catId": 310,
+    "parentId": 33,
+   "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "Xbox",
+    "catId": "xbox",
+    "parentId": 33,
+    "children": true
+  },
+  {
+    "parent": "Xbox",
+    "catName": "Xbox",
+    "catId": 296,
+    "parentId": "xbox",
+    "children": false
+  },
+  {
+    "parent": "Xbox",
+    "catName": "Xbox 360",
+    "catId": 297,
+    "parentId": "xbox",
+    "children": false
+  },
+  {
+    "parent": "Xbox",
+    "catName": "XBox One",
+    "catId": 444,
+    "parentId": "xbox",
+    "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "Nintendo",
+    "catId": "nintendo",
+    "parentId": 33,
+    "children": true
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "3DS",
+    "catId": 302,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "64",
+    "catId": 301,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "DS",
+    "catId": 303,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "GameBoy",
+    "catId": 304,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "GameBoy Advance",
+    "catId": 323,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "GameCube",
+    "catId": 324,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "NES",
+    "catId": 298,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "SNES",
+    "catId": 299,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "Wii",
+    "catId": 300,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Nintendo",
+    "catName": "Wii U",
+    "catId": 354,
+    "parentId": "nintendo",
+    "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "Sega",
+    "catId": "sega",
+    "parentId": 33,
+    "children": true
+  },  
+  {
+    "parent": "Sega",
+    "catName": "CD",
+    "catId": 450,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Sega",
+    "catName": "Dreamcast",
+    "catId": 312,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Sega",
+    "catName": "Game Gear",
+    "catId": 313,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Sega",
+    "catName": "Genesis",
+    "catId": 314,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Sega",
+    "catName": "Master System",
+    "catId": 315,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Sega",
+    "catName": "Saturn",
+    "catId": 316,
+    "parentId": "sega",
+    "children": false
+  },
+  {
+    "parent": "Gaming Systems &amp; Games",
+    "catName": "Playstation",
+    "catId": "playstation",
+    "parentId": 33,
+    "children": true
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PS-1",
+    "catId": 293,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PS-2",
+    "catId": 294,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PS-3",
+    "catId": 295,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PS-4",
+    "catId": 443,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PSP",
+    "catId": 317,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Playstation",
+    "catName": "PS-Vita",
+    "catId": 318,
+    "parentId": "playstation",
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Home Electronics",
+    "catId": 32,
+    "parentId": 7,
+    "children": true
+  },
+  {
+    "parent": "Home Electronics",
+    "catName": "Home Audio/Theater",
+    "catId": 182,
+    "parentId": 32,
+    "children": false,
+    "children": true
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "CD Players",
+    "catId": 403,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "MiniDisc Players",
+    "catId": 404,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "Projectors",
+    "catId": 454,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "Receivers &amp; Radios",
+    "catId": 401,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "Speakers",
+    "catId": 405,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "Tape Decks",
+    "catId": 402,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Audio/Theater",
+    "catName": "Turntables",
+    "catId": 381,
+    "parentId": 182,
+    "children": false
+  },
+  {
+    "parent": "Home Electronics",
+    "catName": "TVs",
+    "catId": 180,
+    "parentId": 32,
+    "children": false
+  },
+  {
+    "parent": "Home Electronics",
+    "catName": "VCRs/DVDs/DVRs/Blu-ray",
+    "catId": 181,
+    "parentId": 32,
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Personal Electronics",
+    "catId": 183,
+    "parentId": 7,
+    "children": true
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "Cell Phones &amp; Accessories",
+    "catId": 185,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "Digital Photo Frames",
+    "catId": 426,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "eBook Readers",
+    "catId": 351,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "GPS- Devices",
+    "catId": 233,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "Headphones",
+    "catId": 387,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "MP3/CD Players &amp; Accessories",
+    "catId": 118,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "PDAs",
+    "catId": 186,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "Portable DVD Players",
+    "catId": 406,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Personal Electronics",
+    "catName": "Radios",
+    "catId": 417,
+    "parentId": 183,
+    "children": false
+  },
+  {
+    "parent": "Computers &amp; Electronics",
+    "catName": "Vintage Electronics",
+    "catId": 431,
+    "parentId": 7,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Crafts &amp; Hobbies",
+    "catId": 8,
+    "children": true
+  },
+  {
+    "parent": "Crafts &amp; Hobbies",
+    "catName": "Models &amp; Model Kits",
+    "catId": 418,
+    "parentId": 8,
+    "children": false
+  },
+  {
+    "parent": "Crafts &amp; Hobbies",
+    "catName": "Scouting &amp; Youth Groups-",
+    "catId": 446,
+    "parentId": 8,
+    "children": false
+  },
+  {
+    "parent": "Crafts &amp; Hobbies",
+    "catName": "Sewing Machines",
+    "catId": 415,
+    "parentId": 8,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "For The Home",
+    "catId": 195,
+    "children": true
+  },
+  {
+    "parent": "For The Home",
+    "catName": "Appliances",
+    "catId": 196,
+    "parentId": 195,
+    "children": false
+  },
+  {
+    "parent": "For The Home",
+    "catName": "Home Decor",
+    "catId": 197,
+    "parentId": 195,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Baskets",
+    "catId": 198,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Clocks",
+    "catId": 199,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Furniture",
+    "catId": 200,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Lamps-/Lighting",
+    "catId": 201,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Linens/Fabric/Textiles",
+    "catId": 202,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Pottery",
+    "catId": 203,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "Home Decor",
+    "catName": "Silver &amp; Brass",
+    "catId": 204,
+    "parentId": 197,
+    "children": false
+  },
+  {
+    "parent": "For The Home",
+    "catName": "Outdoor/Garden",
+    "catId": 240,
+    "parentId": 195,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Glass", 
+    "catId": 14,
+    "children": true
+  },
+  {
+    "parent": "Glass",
+    "catName": "Art",
+    "catId": 331,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Carnival",
+    "catId": 332,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Depression",
+    "catId": 328,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Elegant",
+    "catId": 333,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Fine Crystal",
+    "catId": 329,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Opaque",
+    "catId": 334,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Pressed",
+    "catId": 330,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": "Glass",
+    "catName": "Vintage",
+    "catId": 335,
+    "parentId": 14,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Jewelry &amp; Gemstones",
+    "catId": 6,
+    "children": true
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Bracelets",
+    "catId": 84,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Brooches/Pins",
+    "catId": 100,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Costume Jewelry",
+    "catId": 91,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Earrings",
+    "catId": 90,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Jewelry Boxes",
+    "catId": 85,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Jewelry Grabbags",
+    "catId": 92,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Jewelry Sets",
+    "catId": 102,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Loose Gemstones",
+    "catId": 436,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Men's Accessories",
+    "catId": 101,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Necklaces",
+    "catId": 86,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Pendants",
+    "catId": 87,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Precious Metal Scrap",
+    "catId": 353,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Rings",
+    "catId": 88,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Jewelry &amp; Gemstones",
+    "catName": "Watches",
+    "catId": 89,
+    "parentId": 6,
+    "children": false
+  },
+  {
+    "parent": "Watches",
+    "catName": "Children's",
+    "catId": 342,
+    "parentId": 89,
+    "children": false
+  },
+  {
+    "parent": "Watches",
+    "catName": "Men's",
+    "catId": 340,
+    "parentId": 89,
+    "children": false
+  },
+  {
+    "parent": "Watches",
+    "catName": "Women's",
+    "catId": 341,
+    "parentId": 89,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Miscellaneous",
+    "catId": 113,
+    "children": true
+  },
+  {
+    "parent": "Miscellaneous",
+    "catName": "Binoculars &amp; Optics",
+    "catId": 447,
+    "parentId": 113,
+    "children": false
+  },
+  {
+    "parent": "Miscellaneous",
+    "catName": "Magazines",
+    "catId": 119,
+    "parentId": 113,
+    "children": false
+  },
+  {
+    "parent": "Miscellaneous",
+    "catName": "Pocket Knives",
+    "catId": 379,
+    "parentId": 113,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Musical Instruments",
+    "catId": 13,
+    "children": true
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Accessories",
+    "catId": 192,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Brass",
+    "catId": 190,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Electronic",
+    "catId": 191,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Other",
+    "catId": 193,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Percussion",
+    "catId": 188,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Strings",
+    "catId": 187,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": "Musical Instruments",
+    "catName": "Woodwinds",
+    "catId": 189,
+    "parentId": 13,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Office Supplies",
+    "catId": 215,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Pets",
+    "catId": 34,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Religious Items",
+    "catId": 115,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Science &amp; Education",
+    "catId": 364,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Seasonal &amp; Holiday",
+    "catId": 18,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Sports",
+    "catId": 12,
+    "children": true
+  },
+  {
+    "parent": "Sports",
+    "catName": "Sporting Equipment",
+    "catId": 112,
+    "parentId": 12,
+    "children": true
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Baseball",
+    "catId": 281,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Basketball",
+    "catId": 285,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Biking",
+    "catId": 289,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Billiards",
+    "catId": 292,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Bowling",
+    "catId": 291,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Camping &amp; Hiking",
+    "catId": 392,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Cycling",
+    "catId": 369,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Dance",
+    "catId": 423,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Equestrian",
+    "catId": 376,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Fishing",
+    "catId": 280,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Football",
+    "catId": 282,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Golf",
+    "catId": 287,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Health &amp; Fitness",
+    "catId": 391,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Hockey",
+    "catId": 284,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Hunting",
+    "catId": 279,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Skateboarding",
+    "catId": 290,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Soccer",
+    "catId": 283,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Tennis",
+    "catId": 286,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Water Sports",
+    "catId": 288,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": "Sporting Equipment",
+    "catName": "Winter Sports",
+    "catId": 349,
+    "parentId": 112,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Tableware and Kitchenware",
+    "catId": 20,
+    "children": true
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Barware",
+    "catId": 47,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "China",
+    "catId": 56,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Cookware",
+    "catId": 48,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Cutlery",
+    "catId": 49,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Dinnerware",
+    "catId": 68,
+    "parentId": 20,
+    "children": true
+  },
+  {
+    "parent": "Dinnerware",
+    "catName": "Bowls",
+    "catId": 51,
+    "parentId": 68,
+    "children": false
+  },
+  {
+    "parent": "Dinnerware",
+    "catName": "Cups-/Mugs",
+    "catId": 52,
+    "parentId": 68,
+    "children": false
+  },
+  {
+    "parent": "Dinnerware",
+    "catName": "Plates",
+    "catId": 53,
+    "parentId": 68,
+    "children": false
+  },
+  {
+    "parent": "Dinnerware",
+    "catName": "Serving Pieces",
+    "catId": 54,
+    "parentId": 68,
+    "children": false
+  },
+  {
+    "parent": "Dinnerware",
+    "catName": "Sets",
+    "catId": 55,
+    "parentId": 68,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Flatware",
+    "catId": 57,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Flatware",
+    "catName": "Silver Plated",
+    "catId": 58,
+    "parentId": 57,
+    "children": false
+  },
+  {
+    "parent": "Flatware",
+    "catName": "Stainless Steel",
+    "catId": 59,
+    "parentId": 57,
+    "children": false
+  },
+  {
+    "parent": "Flatware",
+    "catName": "Sterling Silver",
+    "catId": 60,
+    "parentId": 57,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Glassware",
+    "catId": 61,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Ovenware",
+    "catId": 62,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Serving Pieces",
+    "catId": 63,
+    "parentId": 20,
+    "children": true
+  },
+  {
+    "parent": "Serving Pieces",
+    "catName": "Holloware",
+    "catId": 384,
+    "parentId": 63,
+    "children": false
+  },
+  {
+    "parent": "Serving Pieces",
+    "catName": "Trays",
+    "catId": 383,
+    "parentId": 63,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Small Appliances",
+    "catId": 64,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Table Linens",
+    "catId": 65,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Tea &amp; Coffee Accessories",
+    "catId": 66,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": "Tableware and Kitchenware",
+    "catName": "Tools &amp; Gadgets",
+    "catId": 67,
+    "parentId": 20,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Tools",
+    "catId": 114,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Toys/Dolls/Games",
+    "catId": 9,
+    "children": true
+  },
+  {
+    "parent": "Toys/Dolls/Games",
+    "catName": "Dolls",
+    "catId": 109,
+    "parentId": 9,
+    "children": true
+  },
+  {
+    "parent": "Dolls",
+    "catName": "Antique",
+    "catId": 398,
+    "parentId": 109,
+    "children": false
+  },
+  {
+    "parent": "Dolls",
+    "catName": "Fashion",
+    "catId": 449,
+    "parentId": 109,
+    "children": false
+  },
+  {
+    "parent": "Dolls",
+    "catName": "Modern",
+    "catId": 397,
+    "parentId": 109,
+    "children": false
+  },
+  {
+    "parent": "Dolls",
+    "catName": "Vintage",
+    "catId": 396,
+    "parentId": 109,
+    "children": false
+  },
+  {
+    "parent": "Toys/Dolls/Games",
+    "catName": "Educational",
+    "catId": 226,
+    "parentId": 9,
+    "children": false
+  },
+  {
+    "parent": "Educational",
+    "catName": "Educational Electronic Games",
+    "catId": 439,
+    "parentId": 226,
+    "children": false
+  },
+  {
+    "parent": "Educational",
+    "catName": "Educational Video Games",
+    "catId": 440,
+    "parentId": 226,
+    "children": false
+  },
+  {
+    "parent": "Toys/Dolls/Games",
+    "catName": "Games",
+    "catId": 110,
+    "parentId": 9,
+    "children": false
+  },
+  {
+    "parent": "Toys/Dolls/Games",
+    "catName": "Stuffed Animals",
+    "catId": 121,
+    "parentId": 9,
+    "children": false
+  },
+  {
+    "parent": "Toys/Dolls/Games",
+    "catName": "Toys",
+    "catId": 108,
+    "parentId": 9,
+    "children": false
+  },
+  {
+    "parent": "Toys",
+    "catName": "Antique",
+    "catId": 239,
+    "parentId": 108,
+    "children": false
+  },
+  {
+    "parent": "Toys",
+    "catName": "Cars &amp; Trucks",
+    "catId": 432,
+    "parentId": 108,
+    "children": false
+  },
+  {
+    "parent": "Toys",
+    "catName": "LEGO",
+    "catId": 388,
+    "parentId": 108,
+    "children": false
+  },
+  {
+    "parent": false,
+    "catName": "Transportation",
+    "catId": 23,
+    "children": true
+  },
+  {
+    "parent": false,
+    "catName": "Travel/Luggage",
+    "catId": 427,
+    "children": true
+  },
+  {
+    "parent": "Travel/Luggage",
+    "catName": "Backpacks",
+    "catId": 429,
+    "parentId": 427,
+    "children": false
+  },
+  {
+    "parent": "Travel/Luggage",
+    "catName": "Briefcases",
+    "catId": 430,
+    "parentId": 427,
+    "children": false
+  },
+  {
+    "parent": "Travel/Luggage",
+    "catName": "Suitcases",
+    "catId": 428,
+    "parentId": 427,
+    "children": false
+  }
+]

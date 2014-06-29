@@ -6,35 +6,40 @@
     <link rel="stylesheet" href="styles/styles.min.css">
     <script src="javascripts/vendor.min.js"></script>
 </head>
-<body ng-app="goodwillApp" ng-controller='AuctionController'>
+
+<body ng-app="goodwill" ng-controller='SearchCtrl'>
 
   <header>
-    <form novalidate ng-submit="submit()" role="form" name="searchForm">
-      <div ng-include="'_search.html'"></div>
-      <div ng-include="'_sellers.html'"></div>
-      <div ng-include="'_categories.html'"></div>
+    <form novalidate ng-submit="search.submit()" role="form" name="searchForm">
+      <div class="row">
+        <div class="col-sm-1 form-group">
+          <a href="" ng-model="view" ng-click="view = favorites">Favorites</a>
+          <a href="" ng-model="view" ng-click="view = search">Search</a>
+        </div>
+        <search-term></search-term>
+        <sellers></sellers>
+      </div>
+      
+      <div class="row">
+        <categories></categories>
+      </div>
+      
+      <div class="row">
+        <sub-categories></sub-categories>
+      </div>
+    
     </form>
   </header>
   
   <div class="container-fluid">
     
-    <div class="results">
-      <div ng-show='auctions.empty'>So ... I don't know how to say this. But there's no results. Sorry about that.</div>
-      <div ng-show='auctions.cant'>For some reason All Sellers &amp; All Categories is impossible.</div>
+    <search-results ng-show="{{view == search}}"></search-results>
 
-      <div infinite-scroll-immediate-check="false" infinite-scroll="auctions.getPage()" infinite-scroll-distance="3" infinite-scroll-disabled='auctions.busy' class="auctions" id="results" >
-        <div deckgrid source="auctions.items" cardTemplate="_card.html" class="deckgrid"> </div>
-      </div>
-      
-      
-      
-    </div>
-    <div class="the_end loading" ng-show='auctions.atend'>That's all</div>
-    <div class="loading" ng-show='auctions.busy'>Loading data...</div>
+    <favorites ng-show="{{view == favorites}}"</favorites>
   
   </div>
   
-  <div ng-include="'_modal.html'"></div>
+  <div ng-include="'partials/_modal.html'"></div>
   
   <script src="javascripts/client.js"></script>
 

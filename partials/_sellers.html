@@ -1,0 +1,8 @@
+<div class="col-sm-5 form-group">
+  <!-- <input type="hidden" ng-model="search.seller" value="{{search.seller}}"/> -->
+  <select name="sellers" class="form-control" ng-model="search.seller" ng-change="search.submit()">
+    <option ng-repeat="ngSeller in ngSellers" ng-selected="{{ngSeller.sellerId == search.seller}}" value="{{ngSeller.sellerId}}" >{{ngSeller.name}}</option>
+  </select>
+</div>
+
+<!-- Object {name: "TX Austin", sellerId: "43"} ng-options="seller.name for seller in ngSellers track by seller.sellerId" -->
