@@ -1,8 +1,13 @@
 <div class="col-sm-6 form-group">
   <div class="input-group">
+    <input type="radio" name="show" ng-model="show" value="search" id="view_search" />
+    <!-- <label for="view_search">Search</label> -->
+    <input type="radio" name="show" ng-model="show" value="favorites" id="view_favorites"/>
+    <!-- <label for="view_favorites">Favorites</label> -->
+
     <input class="form-control" ng-model="search.term" name="term" type="text" placeholder="Type ye words if ye dare.">
     <span class="input-group-btn">
-      <button ng-click="clear()" class="form-control btn btn-default" type="button">Clear</button>
+      <button ng-class="{disabled: search.term == undefined}" ng-click="search.term = undefined; search.submit()" class="form-control btn btn-default" type="button">Clear</button>
     </span>
   </div>
 </div>

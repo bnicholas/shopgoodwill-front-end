@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title>shopgoodwill ... better</title>
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <script src="javascripts/vendor.min.js"></script>
+</head>
+
+<body ng-app="goodwill" ng-controller='SearchCtrl'>
+  <header>
+    
+    <form novalidate ng-submit="search.submit()" role="form" name="searchForm">
+      <div class="row">
+        <search-term></search-term>
+        <sellers-list></sellers-list>
+      </div>
+      
+      <div class="row">
+        <categories></categories>
+      </div>
+      
+    </form>
+  </header>
+  
+  <div class="container-fluid" ng-init="show = 'search'">
+    
+    <search-results ng-show="show == 'search'"></search-results>
+    
+    <favorites ng-show="show == 'favorites'"></favorites>
+  
+  </div>
+  
+  <auction-details-modal> </auction-details-modal>
+  
+  <!-- <div ng-include="'partials/_modal.html'"></div> -->
+  
+  <script src="javascripts/client.js"></script>
+
+</body>
+</html>

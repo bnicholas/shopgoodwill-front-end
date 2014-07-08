@@ -1,8 +1,10 @@
-<div class="col-sm-5 form-group">
-  <!-- <input type="hidden" ng-model="search.seller" value="{{search.seller}}"/> -->
-  <select name="sellers" class="form-control" ng-model="search.seller" ng-change="search.submit()">
+<div class="seller col-sm-5">
+  
+  <div class="form-inline">
+  <button type="button" class="btn btn-default" ng-class="{active: search.seller == 'all'}" ng-click="search.seller = 'all'; search.submit()">All Sellers</button>
+
+  <select name="seller" class="form-control" ng-model="search.seller" ng-change="search.submit()">
     <option ng-repeat="ngSeller in ngSellers" ng-selected="{{ngSeller.sellerId == search.seller}}" value="{{ngSeller.sellerId}}" >{{ngSeller.name}}</option>
   </select>
+  </div>
 </div>
-
-<!-- Object {name: "TX Austin", sellerId: "43"} ng-options="seller.name for seller in ngSellers track by seller.sellerId" -->

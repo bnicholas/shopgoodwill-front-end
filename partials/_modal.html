@@ -3,10 +3,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
-        <h4 class="modal-title" id="auctionModalLabel">Auction Title</h4>
+        <h4 ng-model="details.title" class="modal-title" id="auctionModalLabel">{{details.title}}</h4>
       </div>
       <div class="modal-body">
-        <iframe frameborder="0"></iframe>
+        
+        <img ng-repeat="image in details.images" ng-src="image" alt="" />
+        <span ng-model="details.price">{{details.price}}</span>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

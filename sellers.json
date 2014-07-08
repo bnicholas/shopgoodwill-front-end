@@ -1,394 +1,394 @@
 [
   {
-    "name": "All Sellers",
-    "sellerId": 0
+    "name": "Choose a Seller",
+    "sellerId": "all"
   },
   {
     "name": "AL Mobile",
-    "sellerId": 53
+    "sellerId": "53"
   },
   {
     "name": "AZ Tucson",
-    "sellerId": 148
+    "sellerId": "148"
   },
   {
     "name": "CA Long Beach",
-    "sellerId": 57
+    "sellerId": "57"
   },
   {
     "name": "CA Los Angeles",
-    "sellerId": 165
+    "sellerId": "165"
   },
   {
     "name": "CA Ontario",
-    "sellerId": 78
+    "sellerId": "78"
   },
   {
     "name": "CA Sacramento",
-    "sellerId": 162
+    "sellerId": "162"
   },
   {
     "name": "CA San Diego",
-    "sellerId": 12
+    "sellerId": "12"
   },
   {
     "name": "CA San Jose",
-    "sellerId": 119
+    "sellerId": "119"
   },
   {
     "name": "CA Santa Ana",
-    "sellerId": 2
+    "sellerId": "2"
   },
   {
     "name": "CA Santa Rosa",
-    "sellerId": 120
+    "sellerId": "120"
   },
   {
     "name": "CA Stockton",
-    "sellerId": 49
+    "sellerId": "49"
   },
   {
     "name": "CO Colorado Springs",
-    "sellerId": 73
+    "sellerId": "73"
   },
   {
     "name": "CO Denver",
-    "sellerId": 161
+    "sellerId": "161"
   },
   {
     "name": "CT Hamden",
-    "sellerId": 174
+    "sellerId": "174"
   },
   {
     "name": "DC Washington",
-    "sellerId": 76
+    "sellerId": "76"
   },
   {
     "name": "DE New Castle",
-    "sellerId": 42
+    "sellerId": "42"
   },
   {
     "name": "FL Fort Lauderdale",
-    "sellerId": 16
+    "sellerId": "16"
   },
   {
     "name": "FL Fort Myers",
-    "sellerId": 81
+    "sellerId": "81"
   },
   {
     "name": "FL Jacksonville",
-    "sellerId": 47
+    "sellerId": "47"
   },
   {
     "name": "FL Orlando",
-    "sellerId": 109
+    "sellerId": "109"
   },
   {
     "name": "FL Tallahassee",
-    "sellerId": 176
+    "sellerId": "176"
   },
   {
     "name": "GA Savannah",
-    "sellerId": 98
+    "sellerId": "98"
   },
   {
     "name": "IA Des Moines",
-    "sellerId": 102
+    "sellerId": "102"
   },
   {
     "name": "IA Iowa City",
-    "sellerId": 10
+    "sellerId": "10"
   },
   {
     "name": "IA Sioux City",
-    "sellerId": 137
+    "sellerId": "137"
   },
   {
     "name": "IA Waterloo",
-    "sellerId": 171
+    "sellerId": "171"
   },
   {
     "name": "ID Boise",
-    "sellerId": 159
+    "sellerId": "159"
   },
   {
     "name": "IL East Peoria",
-    "sellerId": 90
+    "sellerId": "90"
   },
   {
     "name": "IL Springfield",
-    "sellerId": 132
+    "sellerId": "132"
   },
   {
     "name": "IN Clarksville",
-    "sellerId": 149
+    "sellerId": "149"
   },
   {
     "name": "IN Evansville",
-    "sellerId": 123
+    "sellerId": "123"
   },
   {
     "name": "IN Fort Wayne",
-    "sellerId": 105
+    "sellerId": "105"
   },
   {
     "name": "IN Indianapolis",
-    "sellerId": 5
+    "sellerId": "5"
   },
   {
     "name": "IN South Bend",
-    "sellerId": 50
+    "sellerId": "50"
   },
   {
     "name": "IN Terre Haute",
-    "sellerId": 4
+    "sellerId": "4"
   },
   {
     "name": "KS Wichita",
-    "sellerId": 20
+    "sellerId": "20"
   },
   {
     "name": "LA Shreveport",
-    "sellerId": 7
+    "sellerId": "7"
   },
   {
     "name": "MI Charlotte",
-    "sellerId": 68
+    "sellerId": "68"
   },
   {
     "name": "MI Flint",
-    "sellerId": 114
+    "sellerId": "114"
   },
   {
     "name": "MI Grandville",
-    "sellerId": 9
+    "sellerId": "9"
   },
   {
     "name": "MI Kalamazoo",
-    "sellerId": 77
+    "sellerId": "77"
   },
   {
     "name": "MI Muskegon",
-    "sellerId": 86
+    "sellerId": "86"
   },
   {
     "name": "MI Port Huron",
-    "sellerId": 85
+    "sellerId": "85"
   },
   {
     "name": "MI Traverse City",
-    "sellerId": 89
+    "sellerId": "89"
   },
   {
     "name": "MN Saint Paul",
-    "sellerId": 106
+    "sellerId": "106"
   },
   {
     "name": "MO Blue Springs",
-    "sellerId": 58
+    "sellerId": "58"
   },
   {
     "name": "MO St. Louis",
-    "sellerId": 140
+    "sellerId": "140"
   },
   {
     "name": "MS Gulfport",
-    "sellerId": 129
+    "sellerId": "129"
   },
   {
     "name": "MT Billings",
-    "sellerId": 61
+    "sellerId": "61"
   },
   {
     "name": "MT Great Falls",
-    "sellerId": 99
+    "sellerId": "99"
   },
   {
     "name": "MT Missoula",
-    "sellerId": 128
+    "sellerId": "128"
   },
   {
     "name": "NC Greensboro",
-    "sellerId": 46
+    "sellerId": "46"
   },
   {
     "name": "ND Bismarck",
-    "sellerId": 154
+    "sellerId": "154"
   },
   {
     "name": "NE Omaha",
-    "sellerId": 118
+    "sellerId": "118"
   },
   {
     "name": "NJ Bellmawr",
-    "sellerId": 136
+    "sellerId": "136"
   },
   {
     "name": "NV North Las Vegas",
-    "sellerId": 147
+    "sellerId": "147"
   },
   {
     "name": "NY Astoria",
-    "sellerId": 33
+    "sellerId": "33"
   },
   {
     "name": "NY Buffalo",
-    "sellerId": 127
+    "sellerId": "127"
   },
   {
     "name": "NY Rochester",
-    "sellerId": 17
+    "sellerId": "17"
   },
   {
     "name": "OH Akron",
-    "sellerId": 27
+    "sellerId": "27"
   },
   {
     "name": "OH Ashtabula",
-    "sellerId": 97
+    "sellerId": "97"
   },
   {
     "name": "OH Cincinnati",
-    "sellerId": 130
+    "sellerId": "130"
   },
   {
     "name": "OH Dayton",
-    "sellerId": 54
+    "sellerId": "54"
   },
   {
     "name": "OH Heath",
-    "sellerId": 32
+    "sellerId": "32"
   },
   {
     "name": "OH Lorain",
-    "sellerId": 172
+    "sellerId": "172"
   },
   {
     "name": "OH Port Clinton",
-    "sellerId": 21
+    "sellerId": "21"
   },
   {
     "name": "OH Powell",
-    "sellerId": 103
+    "sellerId": "103"
   },
   {
     "name": "OH Toledo",
-    "sellerId": 28
+    "sellerId": "28"
   },
   {
     "name": "OR Eugene",
-    "sellerId": 59
+    "sellerId": "59"
   },
   {
     "name": "OR Hillsboro",
-    "sellerId": 8
+    "sellerId": "8"
   },
   {
     "name": "OR Medford",
-    "sellerId": 15
+    "sellerId": "15"
   },
   {
     "name": "PA Berwyn",
-    "sellerId": 30
+    "sellerId": "30"
   },
   {
     "name": "PA Falls Creek",
-    "sellerId": 146
+    "sellerId": "146"
   },
   {
     "name": "PA Frazer",
-    "sellerId": 173
+    "sellerId": "173"
   },
   {
     "name": "PA Johnstown",
-    "sellerId": 64
+    "sellerId": "64"
   },
   {
     "name": "PA Langhorne",
-    "sellerId": 169
+    "sellerId": "169"
   },
   {
     "name": "PA North Versailles",
-    "sellerId": 18
+    "sellerId": "18"
   },
   {
     "name": "PA Reading",
-    "sellerId": 60
+    "sellerId": "60"
   },
   {
     "name": "SC Greenville",
-    "sellerId": 22
+    "sellerId": "22"
   },
   {
     "name": "SD Sioux Falls",
-    "sellerId": 163
+    "sellerId": "163"
   },
   {
     "name": "TN Chattanooga",
-    "sellerId": 124
+    "sellerId": "124"
   },
   {
     "name": "TN Nashville",
-    "sellerId": 117
+    "sellerId": "117"
   },
   {
     "name": "TX Austin",
-    "sellerId": 43
+    "sellerId": "43"
   },
   {
     "name": "TX Corpus Christi",
-    "sellerId": 133
+    "sellerId": "133"
   },
   {
     "name": "TX El Paso",
-    "sellerId": 100
+    "sellerId": "100"
   },
   {
     "name": "TX Fort Worth",
-    "sellerId": 63
+    "sellerId": "63"
   },
   {
     "name": "TX Lufkin",
-    "sellerId": 74
+    "sellerId": "74"
   },
   {
     "name": "TX San Antonio",
-    "sellerId": 164
+    "sellerId": "164"
   },
   {
     "name": "TX Waco",
-    "sellerId": 144
+    "sellerId": "144"
   },
   {
     "name": "WA Pasco",
-    "sellerId": 155
+    "sellerId": "155"
   },
   {
     "name": "WA Seattle",
-    "sellerId": 48
+    "sellerId": "48"
   },
   {
     "name": "WA Spokane",
-    "sellerId": 19
+    "sellerId": "19"
   },
   {
     "name": "WA Tacoma",
-    "sellerId": 122
+    "sellerId": "122"
   },
   {
     "name": "WI Appleton",
-    "sellerId": 134
+    "sellerId": "134"
   },
   {
     "name": "WI Madison",
-    "sellerId": 108
+    "sellerId": "108"
   },
   {
     "name": "WV Charleston",
-    "sellerId": 56
+    "sellerId": "56"
   },
   {
     "name": "WY Cheyenne",
-    "sellerId": 150
+    "sellerId": "150"
   }
 ]

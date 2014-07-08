@@ -1,42 +1,11 @@
 @import 'bootstrap'
 
-// .deckgrid[deckgrid]::before
-//   content: '4 .column.column-1-4'
-//   font-size: 0
-//   visibility: hidden
 
-// .deckgrid .column
-//   float: left
-// .deckgrid .column-1-4
-//   width: 25%
-
-// @media screen and (max-width: 480px)
-//   .deckgrid[deckgrid]::before
-//     content: '1 .column.column-1-1'
-//   .deckgrid .column-1-1
-//     width: 100%
-
-
-
-$nav-height: 140px
+$nav-height: 180px
 
 body
   background: #fff
   padding-top: $nav-height
-
-.headroom
-  background: #fff
-  padding: 10px 20px 20px 20px
-  position: fixed
-  top: 0
-  z-index: 999
-  transition: transform 200ms linear
-
-.headroom--pinned
-  transform: translateY(0%)
-
-.headroom--unpinned
-  transform: translateY(-100%)
 
 ul
   margin: 0
@@ -56,92 +25,39 @@ li
 .disabled
   opacity: .5
 
-#holder 
+.visible, .show
+  display: block
+  opacity: 1
+
+.categories 
+  input[type="radio"]
+    display: none
+    &:checked+label
+      background: rgba(0,0,0,.2)
+  label
+    padding: 3px .5em
+    border-radius: 15px
+    line-height: 13px
+    &:hover
+      cursor: pointer
+.child_categories
   display: none
 
-
-.loading
-  text-align: center
-  font-size: 2em
-  padding: 1em
-  display: block
-  width: 100%
-
-
-#grid[data-columns]::before
-  content: '3 .column.size-1of3'
-  
-  /* These are the es that are going to be applied: */
-  .column 
-    float: left
-  .size-1of3 
-    width: 33.333%
-
-@media screen and (max-width: 480px)
-  #grid[data-columns]::before 
-    content: '1 .column.size-1of1'
-
-@media screen and (min-width: 481px) and (max-width: 768px) 
-  #grid[data-columns]::before 
-    content: '2 .column.size-1of2'
-
-@media screen and (min-width: 769px) 
-  #grid[data-columns]::before 
-    content: '3 .column.size-1of3'
-  
-/* Again, you’re free to use and define the classes: */
-.column  
-  float: left 
-.size-1of1  
-  width: 100% 
-.size-1of2  
-  width: 50% 
-.size-1of3  
-  width: 33.333% 
-
-
-
 .results
-  text-align: center
-  .auction
-    display: inline-block
-    margin: 5px
-    // display: none
-    width: 240px
-    position: relative
-    margin-bottom: 10px
-    &.favorite
-      background: magenta
-    &.loaded
-      display: block
-    p
-      margin: .5em
-      padding: 0 1em
-    a
-    img
-      width: 100%
-      height: auto
+  text-align: left
+  transition: opacity .25s ease-in-out
+  &.busy
+    opacity: .5
 
-  *
-    box-sizing: border-box 
-  
-  .photo_wrapper
-    min-height: 100px
-    background: #fff url(../images/spinner.gif) center 30px no-repeat
-    position: relative
-    overflow: hidden
-    display: block
-    margin: 0
-    img 
-      // transition: opacity .5s linear .5s
-      transition: opacity .5s linear .5s 
-      opacity: 1
-      // display: block
-      &.loaded
-        opacity: 1
-
-  
+.auction
+  background: url(../images/spinner.gif) center 30px no-repeat
+  display: inline-block
+  margin: .5%
+  width: 24%
+  position: relative
   .info
+    // transition: opacity .5s ease-in-out
+    // opacity: 0
     background: rgba(0, 0, 0, 0.2)
     position: absolute
     z-index: 99
@@ -159,28 +75,61 @@ li
     span 
       display: inline-block
       margin-right: 10px
-    
-  .price
-    
-  .ending
-    
-  .bids
-    
-  .favorite
-    color: #fff
-    width: 10px
-    height: 10px
-    &.selected
-      font-size: 2em
+  img
+    transition: opacity .25s ease-in-out
+    opacity: 0
+    width: 100%
+    height: auto
+    max-height: 300px
+  
+  &.is-loaded
+    background: none
+    .info
+      // opacity: 1
+    img
+      opacity: 1  
+  
+  .details
+    min-height: 100px
+    position: relative
+    overflow: hidden
+    display: block
+    margin: 0
 
-input[type="radio"]
+.ui_feedback > div
   display: none
-  &:checked+label
-    background: rgba(0,0,0,.2)
+  text-align: center
+  font-size: 2em
 
-label
-  padding: 3px .5em
-  border-radius: 15px
-  line-height: 13px
-  &:hover
-    cursor: pointer
+.loading
+  text-align: center
+  font-size: 2em
+  padding: 1em
+  display: block
+  width: 100%
+
+
+.page_loading 
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 100%
+  background: rgba(0,0,0,.2)
+  display: none
+  
+.headroom
+  box-sizing: border-box
+  background: rgba(255,255,255,.8)
+  padding: 10px 20px 20px 20px
+  position: fixed
+  top: 0
+  z-index: 999
+  transition: transform 200ms linear
+
+.headroom--pinned
+  transform: translateY(0%)
+
+.headroom--unpinned
+  transform: translateY(-100%)

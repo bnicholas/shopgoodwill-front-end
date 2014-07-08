@@ -1,4 +1,29 @@
 CATEGORIES
-Work on some kind of drilldown
+  - Back out of sub categories
+  - Fix gaming system sub category (nintendo, atari ...)
+  - Add 'All Sellers' button
+  - Submitting a search with a term defaults category to 0
+  - Fix Features vs Search / All Sellers + Category
+
+
+SINGLE AUCTION
+  - Scrape a single auction page for images & info
+  - Display results in a modal window
+
+
+FAVORITES
+  - Create favorites view
+
+
+INTERFACE
+  - See about loading cards after images have loded.
+  - Auction Title on hover
+  - Ease transition between populated results and loading
+  - 
+
+
+SELLER MAP
+  - Parse sellers into geo coords
+
 
 

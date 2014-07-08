@@ -1,4 +1,4 @@
-<div ng-show='search.empty'>So ... I don't know how to say this. But there's no results. Sorry about that.</div>
+<div ng-show='search.empty'>No Results. Try broadening your search criteria.</div>
 <div ng-show='search.cant'>For some reason All Sellers &amp; All Categories is impossible.</div>
 <div 
 infinite-scroll-immediate-check="false" 
@@ -6,26 +6,19 @@ infinite-scroll="search.getPage()"
 infinite-scroll-distance="3" 
 infinite-scroll-disabled='search.busy' 
 class="auctions results" 
-id="results" >
-  <!-- <h3>{{search.seller}}</h3> -->
+id="results">
   <div ng-repeat="auction in search.items" class="auction">
     <div class="info">
       <span class="price">{{auction.itemPrice | currency}}</span>
       <span class="ending">{{auction.itemEnd}}</span>
       <span class="bids">{{auction.itemBids}} Bids</span>
-      
-      <!-- <input ng-change="search.submit()" ng-model="search.category" type="radio" name="category" id="cat_{{ngCat.catId}}" value="{{ngCat.catId}}">
-      <label title="{{ngCat.catId}}" ng-click="search.catClick($event)" for="cat_{{ngCat.catId}}">{{ngCat.catName}}</label> -->
-
       <input class="favorite" onchange="love(this)" type="checkbox" id="fav_{{auction.itemNumber}}" value="{{auction.itemNumber}}">
       <label for="fav_{{auction.itemNumber}}">fav</label>
-
-      <!-- <a   href="#" rel="{{auction.itemNumber}}" >*</a> -->
     </div>
-    <a class="photo_wrapper" href="{{auction.itemURL}}" target="_tab">
-      <img data-imageloaded class="load" ng-src="{{auction.itemImage}}" alt="">
+    <a class="photo_wrapper" ng-click="details.getDetails($event)" rel="{{auction.itemNumber}}" href="#">
+      <img data-imageloaded class="load" ng-src="{{auction.itemImage}}" alt="{{auction.itemNumber}}">
     </a>
   </div>
 </div>
-<div class="the_end loading" ng-show='search.atend'>That's all</div>
 <div class="loading" ng-show='search.busy'>Loading data...</div>
+<div class="the_end loading" ng-show='search.atend'>That's all</div>
