@@ -1,3 +1,7 @@
+JS sugar
+  - equal heights
+
+
 CATEGORIES
   - Back out of sub categories
   - Fix gaming system sub category (nintendo, atari ...)
@@ -20,7 +24,6 @@ INTERFACE
   - Auction Title on hover
   - Ease transition between populated results and loading
   - 
-
 
 SELLER MAP
   - Parse sellers into geo coords

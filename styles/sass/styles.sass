@@ -1,11 +1,20 @@
 @import 'bootstrap'
-
+@import 'csspinner'
 
 $nav-height: 180px
 
 body
   background: #fff
   padding-top: $nav-height
+  .favorites_view
+    display: none
+  .results_view
+    display: block
+  &.favorites
+    .favorites_view
+      display: block
+    .results_view
+      display: none
 
 ul
   margin: 0
@@ -52,7 +61,7 @@ li
 .auction
   background: url(../images/spinner.gif) center 30px no-repeat
   display: inline-block
-  margin: .5%
+  margin: .25%
   width: 24%
   position: relative
   .info
@@ -118,6 +127,19 @@ li
   width: 100%
   background: rgba(0,0,0,.2)
   display: none
+
+.modal-body
+  img
+    width: 25%
+
+
+
+.favorite
+  .title
+  img
+    height: 150px
+    width: auto
+    margin-right: 10px
   
 .headroom
   box-sizing: border-box

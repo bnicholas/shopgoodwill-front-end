@@ -1,35 +1,44 @@
-// TO DO
-// -------------------------------------
-// DEAL WITH ALL ALL SITUATION
-// LOADING INDICATOR
-// category and sub-category interaction
-// fetch results function 
-// fetch single auction function
-
-// Elements
 var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,el_sellers ,el_catRadio 
 ,el_details ,el_no_results ,el_loading ,el_the_end ,el_results, el_page_loading;
 
 var app = {
   // "http://goodwillapi.herokuapp.com/"
-  urlPrefix: "http://localhost:5000/"
+  urlPrefix: "http://localhost:5000/",
+  debug: true,
+  view: "search"
 };
 
+var cardTemplate = $('#auctionTemplate').html();
 
 // FAVORITES ------------------
 var favorites = {
   list: JSON.parse(localStorage.getItem('favorites'))
 };
-// toggle a favorite
-favorites.toggle = function(e) {
-  var favId = e.value;
-  var addRemove = favorites.indexOf(favId);
+
+favorites.show = function(json){  
+  var favoritesTemplate = $('#favoritesTemplate').html();
+  var template = Handlebars.compile(favoritesTemplate);
+  $('body').toggleClass('favorites');
+  $('#favorites').html( template(json) );
+};
+
+favorites.view = function(){
+  app.view = "favorites";
+  var jsonp = document.createElement('script');
+  details = favorites.list.join();
+  jsonp.src = app.urlPrefix+'favorites?auctions='+details+'&callback=favorites.show';
+  document.head.appendChild(jsonp);  
+};
+
+favorites.toggle = function(v) {  
+  var favId = v;
+  var addRemove = favorites.list.indexOf(favId);
   if( addRemove != -1) {
-    favorites.splice(addRemove,1);
-    updateFavorites();
+    favorites.list.splice(addRemove,1);
+    favorites.updateLocalStorage();
   } else {
-    favorites.push(favId);
-    updateFavorites();
+    favorites.list.push(favId);
+    favorites.updateLocalStorage();
   };
 };
 // convert localStorage favorites to array
@@ -37,6 +46,11 @@ favorites.updateLocalStorage = function(){
   localStorage['favorites'] = JSON.stringify(favorites.list);
 };
 
+$('#viewFavorites').click(favorites.view);
+
+jQuery('#results').delegate( '.fav_input', 'change', function(){
+  favorites.toggle(event.target.value);
+});
 
 // SEARCH ------------------------
 var search = { 
@@ -48,8 +62,9 @@ var search = {
   page: 1,
   pages: []
 };
+
 // Get and Set search.sellers
-search.getSellerData = function(){
+search.getSellerData = function(){  
   sellers = new XMLHttpRequest();
   sellers.open('GET', '/sellers.json', false);
   sellers.onload = function() {
@@ -58,10 +73,9 @@ search.getSellerData = function(){
   };
   sellers.send();
 };
-// search.getSellerData();
 
 // Populate Seller Navigation
-search.createSellers = function(){
+search.createSellers = function(){  
   search.sellers.forEach(function(value) {
     sellerSelect = document.getElementById('sellers');
     newoption = document.createElement('option');
@@ -69,10 +83,11 @@ search.createSellers = function(){
     newoption.setAttribute('value', value.sellerId);
     sellerSelect.appendChild(newoption);
   });
+  el_sellers.value = localStorage['seller'];
 
 };
 // Get and Set search.categories
-search.getCategoryData = function(){
+search.getCategoryData = function(){  
   categories = new XMLHttpRequest();
   categories.open('GET', '/categories.json', false);
   categories.onload = function() {
@@ -82,7 +97,7 @@ search.getCategoryData = function(){
   categories.send();
 };
 // Populate Category Navigation
-search.createCatItems = function(){
+search.createCatItems = function(){  
   search.categories.forEach(function(val){
     var theDiv;
     // IF IT'S A TOP TOP LEVEL CATEGORY
@@ -129,28 +144,24 @@ search.createCatItems = function(){
   el_subCategories = document.getElementsByClassName('child_categories'); // Sub Category Divs
 };
 // process JSONp search results
-search.JSONcallback = function(json) {
+search.displayResults = function(json) {  
   var old_results = document.getElementsByClassName('.auction');
   if(search.page == 1) {
     el_results.innerHTML = "";
   };
   el_results.classList.remove('busy');
   products.loading = true;
-  json.forEach(function(val, i, arr){
-    products.makeCard(val);
-    if(i+1 == arr.length) {
-      products.checkImages();
-    };
-  });
+  var cardTmpl = Handlebars.compile(cardTemplate);
+  $('#results').append( cardTmpl(json) );
+  products.checkImages();
   search.pages.push(search.page);
   search.page = search.page+1;
-  // Init here so it doesn't call unitl there's results
   search.scroll();
 };
+
 // getting results JSONp
-search.getResults = function() {
+search.getResults = function() {  
   search.term = el_term.value;
-  console.log(search.term);
   products.loading = true;
   el_page_loading.className = "page_loading visible";
   var jsonp = document.createElement('script');
@@ -159,124 +170,93 @@ search.getResults = function() {
     url = app.urlPrefix+'features?callback=search.JSONcallback';
   } else {
     search.features = false;
-    url = app.urlPrefix+'auctions?seller='+search.seller+'&page='+search.page+'&category='+search.category+'&term='+search.term+'&callback=search.JSONcallback';
+    url = app.urlPrefix+'auctions?seller='+search.seller+'&page='+search.page+'&category='+search.category+'&term='+search.term+'&callback=search.displayResults';
   }
   //console.log(url);
   jsonp.src = url;
   document.head.appendChild(jsonp);
 };
-search.setSeller = function(seller){
+
+search.setSeller = function(seller){  
   localStorage['seller'] = seller;
   search.seller = seller;
 };
-search.setCategory = function(category){
+
+search.setCategory = function(category){  
   localStorage['category'] = category;
   search.category = category;
 };
-search.changeSeller = function(){
+
+search.changeSeller = function(){  
   search.setSeller(this.value);
   search.sendSearch();
 }
-search.allSellers = function(){
+
+search.allSellers = function(){  
   el_sellers.value = 'all';
   search.setSeller('all');
   search.sendSearch();
 };
-search.changeCat = function(){
+
+search.changeCat = function(){  
   search.setCategory(this.value);
   search.sendSearch();
 }
-search.clickCat = function(){
+
+search.clickCat = function(){  
   // console.log('if there is a child pane > toggle class open on both the label and the pane');
 };
-search.sendSearch = function(){
+
+search.sendSearch = function(){  
   search.page = 1;
   search.loading = true;
   el_results.classList.add('busy');
   search.getResults();
   return false;
 };
-search.submitForm = function(e){
+
+search.submitForm = function(e){  
   e.preventDefault();
   search.sendSearch();
   return false;
 };
-search.clearInput = function(e){
+search.clearInput = function(e){  
   e.preventDefault();
   el_term.value = "";
   search.sendSearch();
   return false;
 };
+
 // trigger the getting of paginated results
 search.scroll = function(){
-  window.onscroll = function(){
-    scrollDiff = document.body.scrollHeight - document.body.scrollTop;
-    fromBottom = window.innerHeight + 300;
-    // console.log(search.pages.indexOf(search.page) == -1);
-    // if we've scrolled to the bottom & products aren't loading & we haven't called this page yet
-    if(!search.features && fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {
-      console.log("At the Bottom Sir");
-      console.log(scrollDiff+" "+fromBottom);
-      search.getResults();
-      el_loading.className = "visible";
-      // add loading
-    }
-  }
+  if(app.view == "favorites") {    
+    return;
+  } 
+  else {
+    window.onscroll = function(){
+      scrollDiff = document.body.scrollHeight - document.body.scrollTop;
+      fromBottom = window.innerHeight + 300;
+      if(!search.features && fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
+        search.getResults();
+        el_loading.className = "visible";
+      };
+    };
+  };
+
 };
 
 // PRODUCTS ---------------------------------
 var products = {
   loading: false
 };
-products.getDetails = function(){
-  // console.log('getDetails()');
-};
-// create auction card
-products.makeCard = function(a) {
-  resultsDiv = document.getElementById('results');  
-  card       = document.createElement('div');
-  info       = document.createElement('div');
-  price      = document.createElement('span');
-  ending     = document.createElement('span');
-  bids       = document.createElement('span');
-  fav        = document.createElement('input');
-  label      = document.createElement('label');
-  link       = document.createElement('a');
-  thumb      = document.createElement('img');
-  
-  price.innerHTML = a.itemPrice;
-  ending.innerHTML = a.itemEnd;
-  bids.innerHTML = a.itemBids;
-  fav.setAttribute('value', a.itemNumber);
-  fav.id = "a_"+a.itemNumber;
-  fav.setAttribute('type', 'checkbox');
-  label.innerHTML = 'favorite';
-  label.setAttribute('for', "a_"+a.itemNumber);
-  info.setAttribute('class', 'info');
-  info.appendChild(price);
-  info.appendChild(ending);
-  info.appendChild(bids);
-  info.appendChild(fav);
-  info.appendChild(label);
 
-  link.setAttribute('href', a.itemURL);
-  link.setAttribute('class', 'details');
-  link.setAttribute('target', '_tab');
-  thumb.className = "";
-  thumb.setAttribute('src', a.itemImage);
-  thumb.setAttribute('alt', a.itemNumber);
-  link.appendChild(thumb);
-  link.addEventListener('click', products.getDetails, true);
-  
-  card.className = 'auction';
-  card.appendChild(info);
-  card.appendChild(link);
-  
-  resultsDiv.appendChild(card);
-};
 // check for search results images loaded
-products.checkImages = function(){
-  //var container = document.getElementById('results');
+products.checkImages = function(){  
+  $('.fav_input').each(function(){
+    if( favorites.list.indexOf(this.value) != -1 ) {
+      $(this).attr('checked', true);
+    }
+  });
   var imgLoad = imagesLoaded(el_results);
   imgLoad.on( 'progress', function(imgLoad, image) {
     card = image.img.parentNode.parentNode;
@@ -285,13 +265,32 @@ products.checkImages = function(){
     el_loading.className = "";
     el_page_loading.className = "page_loading";
     el_details = document.getElementsByClassName('details'); // a.details
-    // console.log(document.body.scrollHeight);
   });
 };
 
+var detailsTemplate = $('#detailsTemplate').html();
+products.showDetails = function(json){  
+  var template = Handlebars.compile(detailsTemplate);
+  var options = {
+    backdrop : true,
+    keyboard : true,
+    show : true
+  };
+  $('#auctionModal').html( template(json) ).modal(options);
+  // $('#myModal').modal(options)
+};
 
-// simple init of dom elements 
+products.getDetails = function(details){  
+  var jsonp = document.createElement('script');
+  jsonp.src = app.urlPrefix+'favorites?auctions='+details+'&callback=products.showDetails';
+  document.head.appendChild(jsonp);
+};
 
+jQuery('#results').delegate( 'a.details', 'click', function(e){
+  e.preventDefault();
+  details = $(this).attr('rel');
+  products.getDetails(details);
+});
 
 (function(){
   el_allSellers   = document.getElementById('all_sellers'); // All Sellers Button
@@ -308,17 +307,19 @@ products.checkImages = function(){
   el_clear.addEventListener('click', search.clearInput, true);
   el_form.addEventListener('submit', search.submitForm, true);
   el_allSellers.addEventListener('click', search.allSellers, false);
-  el_sellers.value = localStorage['seller'];
   el_sellers.addEventListener('change', search.changeSeller, true);
 
+  // $('#results').delegate( '.fav_input', 'change', function(e){
+  //   console.log(this.value);
+  // });
 
-  if(!localStorage['favorites']) {
+  if(!localStorage['favorites']) {    
     localStorage.setItem('favorites', '[]');
   };
-  if(!localStorage['seller'] || localStorage['seller'] === "undefined") {
+  if(!localStorage['seller'] || localStorage['seller'] === 'undefined') {    
     localStorage['seller'] = 12;
   };
-  if(!localStorage['category'] || localStorage['category'] === "undefined") {
+  if(!localStorage['category'] || localStorage['category'] === 'undefined') {    
     localStorage['category'] = 0;
   };
 
@@ -327,7 +328,6 @@ products.checkImages = function(){
   search.getResults();
 
 })();
-
 
 // HEADROOM NAVIGATION
 (function(){  

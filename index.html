@@ -4,9 +4,22 @@
     <meta charset="utf-8" />
     <title>shopgoodwill ... better</title>
     <link rel="stylesheet" href="styles/styles.min.css">
-    <script src="bower_components/headroom.js/dist/headroom.min.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.pkgd.js"></script>
-
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+    <script src="javascripts/js-head.min.js"></script>
+    <!--  
+    Pollyfills to consider
+    - HTML5 -> html5shiv
+    - SVG -> fabric.js
+    - localStorage -> 
+    - transitionEnd
+    - geoLocation -> 
+    - classList -> classList.js
+    - touch Events -> ie-touch.js 
+    - media queries -> matchMedia()
+    - Grid Layout
+    - CSS transforms -> transformie
+    - 
+    -->
 </head>
 
 <body>
@@ -30,6 +43,7 @@
             <select id="sellers" name="seller" class="form-control">
               
             </select>
+            <button type="button" class="btn btn-default" id="viewFavorites">Favorites</button>
           </div>
         </div>
       
@@ -49,31 +63,57 @@
   
   <div class="container-fluid">
     
-    <div class="auctions results row" id="results">
-      <div class="page_loading" id="page-loading"></div>
+    <div class="page_loading" id="page-loading"></div>
+    
+    <div id="results" class="results_view row" >
       <!-- SEARCH RESULTS -->
     </div>
+    
+    <div id="favorites" class="favorites_view"> 
+      <!-- FAVORITES -->
+    </div>
+
     <div class="ui_feedback">
       <div id="no-results">No Results. Try broadening your search criteria.</div>
-      <div id="loading">Loading</div>
+      <div id="loading" class="csspinner traditional">Loading</div>
       <div id="the_end">The End</div>
     </div>
     
-    <div id="favorites" class="hide"> </div>
+    
+  
   </div>
   
   <div class="modal fade" id="auctionModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <!-- populated by mustache template -->
+  </div>
+  
+  <script id="favoritesTemplate" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="favorite">
+      <h5 class="title">{{title}}</h5>
+      <div class="images">
+        {{#each images}}
+          <img src="{{image}}" alt="">
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
+  
+  <script id="detailsTemplate" type="text/x-handlebars-template">
+    {{#each this}}
+      <div class="modal-dialog modal-lg">
       <div class="modal-content">
         
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
-          <h4 class="modal-title" id="auctionModalLabel">{{details.title}}</h4>
+          <h4 class="modal-title" id="auctionModalLabel">{{title}}</h4>
         </div>
         
         <div class="modal-body">
-          <!-- <img src="image" alt="" /> -->
-          <span class="price">{{details.price}}</span>
+          {{#each images}}
+            <img src="{{image}}" alt="">
+          {{/each}}
         </div>
 
         <div class="modal-footer">
@@ -83,8 +123,28 @@
 
       </div>
     </div>
-  </div>
+    {{/each}}
+  </script>
 
+
+  <script id="auctionTemplate" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="auction">
+      <div class="info">
+        <span class="price">${{itemPrice}}</span>
+        <span class="ending">{{itemEnd}}</span>
+        <span class="bids">{{itemBids}} Bids</span>
+        <input class="fav_input" type="checkbox" id="a_{{itemNumber}}" value="{{itemNumber}}"/>
+        <label class="fav_label" for="a_{{itemNumber}}">favorite</label>
+      </div>
+      <a rel="{{itemNumber}}" class="details" href="{{itemURL}}" target="_blank">
+        <img class="" src="{{itemImage}}" alt="">
+      </a>
+    </div>
+    {{/each}}
+  </script>
+  
+  <script src="javascripts/js-foot.min.js"></script>
   <script src="javascripts/plain.js"></script>
   
 
