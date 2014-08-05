@@ -1,0 +1,61 @@
+.search_nav  
+
+.search_font
+  display: block
+  font-size: 1em
+  line-height: 1.5em
+  text-transform: uppercase
+  font-weight: 300
+  color: #ccc
+  padding: 0 20px  
+
+.search_form
+  background: rgba(#000, .8)
+  .input-group
+    padding: 5px 20px
+  .inline-form
+    padding: 5px 20px
+    .form-control
+      display: inline-block
+      width: 160px
+
+  h3
+    @extend .search_font
+
+  
+.child_categories
+  display: none
+
+.terms
+  background: transparent
+
+.sellers
+  background: transparent
+
+.categories 
+  input[type="radio"]
+    display: none
+    &:checked+label
+      background: rgba(0,0,0,.2)
+  label
+    @extend .search_font
+    &:hover
+      cursor: pointer
+
+.views
+  border-top: 1px solid rgba(255,255,255,.9)
+  text-align: center
+  a
+    display: inline-block
+    width: 40px
+    padding: 5px 10px 
+    border-radius: 4px
+    margin: 5px
+    &:hover
+      text-decoration: none
+    &.active
+      border: 2px solid rgba(#fff, .5)
+  h3
+    text-align: center
+    
+  

@@ -1,0 +1,14 @@
+{{#each this}}
+<div class="auction">
+  <div class="info">
+    <span class="price">${{itemPrice}}</span>
+    <span class="ending">{{itemEnd}}</span>
+    <span class="bids">{{itemBids}} Bids</span>
+    <input class="fav_input" type="checkbox" id="a_{{itemNumber}}" value="{{itemNumber}}"/>
+    <label class="fav_label" for="a_{{itemNumber}}">favorite</label>
+  </div>
+  <a rel="{{itemNumber}}" href="{{itemURL}}" target="_blank" class="image_link">
+    <img class="auction_thumb" src="{{itemImage}}" alt="">
+  </a>
+</div>
+{{/each}}

@@ -1,44 +1,62 @@
 (function() {
-  (function() {
-    window.cardTemplate = $("#auctionTemplate").html();
-    window.el_allSellers = document.getElementById("all_sellers");
-    window.el_sellers = document.getElementById("sellers");
-    window.el_categories = document.getElementById("categories");
-    window.el_form = document.getElementById("search_form");
-    window.el_clear = document.getElementById("input_clear");
-    window.el_no_results = document.getElementById("no-results");
-    window.el_loading = document.getElementById("loading");
-    window.el_the_end = document.getElementById("the_end");
-    window.el_results = document.getElementById("results");
-    window.el_page_loading = document.getElementById("page-loading");
-    window.el_term = document.getElementById("search-term");
-    el_clear.addEventListener("click", search.clearInput, true);
-    el_form.addEventListener("submit", search.submitForm, true);
-    el_allSellers.addEventListener("click", search.allSellers, false);
-    el_sellers.addEventListener("change", search.changeSeller, true);
-    $("#viewButtons").delegate("button", "click", function() {
-      var view;
-      view = this.value;
-      $("body").attr("class", "").addClass(view);
-    });
-    $("#results").delegate(".fav_input", "change", function() {
-      favorites.toggle(event.target.value);
-    });
-    $("#results").delegate("a.details", "click", function(e) {
-      var details;
-      e.preventDefault();
-      details = $(this).attr("rel");
-      products.getDetails(details);
-    });
-    search.getSellerData();
-    search.getCategoryData();
-    search.getResults();
-  })();
+  var app, favorites, products, search, throttled;
 
-}).call(this);
+  window.cardTemplate = $("#auctionTemplate").html();
 
-(function() {
-  var app;
+  window.el_allSellers = document.getElementById("all_sellers");
+
+  window.el_sellers = document.getElementById("sellers");
+
+  window.el_categories = document.getElementById("categories");
+
+  window.el_form = document.getElementById("search_form");
+
+  window.el_clear = document.getElementById("input_clear");
+
+  window.el_no_results = document.getElementById("no-results");
+
+  window.el_loading = document.getElementById("loading");
+
+  window.el_the_end = document.getElementById("the_end");
+
+  window.el_results = document.getElementById("results");
+
+  window.el_page_loading = document.getElementById("page-loading");
+
+  window.el_term = document.getElementById("search-term");
+
+  el_clear.addEventListener("click", search.clearInput, true);
+
+  el_form.addEventListener("submit", search.submitForm, true);
+
+  el_allSellers.addEventListener("click", search.allSellers, false);
+
+  el_sellers.addEventListener("change", search.changeSeller, true);
+
+  $("#viewButtons").delegate("button", "click", function() {
+    var view;
+    view = this.value;
+    $("body").attr("class", "").addClass(view);
+  });
+
+  $("#results").delegate(".fav_input", "change", function() {
+    favorites.toggle(event.target.value);
+  });
+
+  $("#results").delegate("a.details", "click", function(e) {
+    var details;
+    e.preventDefault();
+    details = $(this).attr("rel");
+    products.getDetails(details);
+  });
+
+  search.getSellerData();
+
+  search.getCategoryData();
+
+  search.getResults();
+
+  return;
 
   app = {
     urlPrefix: "http://localhost:5000/",
@@ -59,25 +77,17 @@
     }
   };
 
-}).call(this);
+  if (!localStorage["favorites"]) {
+    localStorage.setItem("favorites", "[]");
+  }
 
-(function() {
-  (function() {
-    if (!localStorage["favorites"]) {
-      localStorage.setItem("favorites", "[]");
-    }
-    if (!localStorage["seller"] || localStorage["seller"] === "undefined") {
-      localStorage["seller"] = 12;
-    }
-    if (!localStorage["category"] || localStorage["category"] === "undefined") {
-      return localStorage["category"] = 0;
-    }
-  })();
+  if (!localStorage["seller"] || localStorage["seller"] === "undefined") {
+    localStorage["seller"] = 12;
+  }
 
-}).call(this);
-
-(function() {
-  var products;
+  if (!localStorage["category"] || localStorage["category"] === "undefined") {
+    localStorage["category"] = 0;
+  }
 
   products = {
     loading: false,
@@ -116,11 +126,6 @@
       document.head.appendChild(jsonp);
     }
   };
-
-}).call(this);
-
-(function() {
-  var search, throttled;
 
   search = {
     page: 1,
@@ -269,11 +274,6 @@
   throttled = _.throttle(search.scroll, 100);
 
   $(window).scroll(search.scroll);
-
-}).call(this);
-
-(function() {
-  var favorites;
 
   favorites = {
     list: JSON.parse(localStorage.getItem("favorites")),

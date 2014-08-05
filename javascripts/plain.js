@@ -4,6 +4,7 @@ var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,
 var app = {
   // "http://goodwillapi.herokuapp.com/"
   urlPrefix: "http://localhost:5000/",
+  // urlPrefix: "http://192.168.1.64:5000/",
   debug: true,
   view: "search"
 };
@@ -46,7 +47,14 @@ favorites.updateLocalStorage = function(){
   localStorage['favorites'] = JSON.stringify(favorites.list);
 };
 
-$('#viewFavorites').click(favorites.view);
+app.view = function(view){
+  document.querySelectorAll('body').className(view);
+}
+
+$('#viewButtons').delegate('button', 'click', function(){
+  var view = this.value;
+  $('body').attr( "class", "").addClass(view);
+});
 
 jQuery('#results').delegate( '.fav_input', 'change', function(){
   favorites.toggle(event.target.value);
@@ -101,14 +109,17 @@ search.createCatItems = function(){
   search.categories.forEach(function(val){
     var theDiv;
     // IF IT'S A TOP TOP LEVEL CATEGORY
-    if (val.parentId == undefined) {
-      theDiv = document.getElementById("top-categories");
-    } 
+    // if (val.parentId == undefined) {
+    //   theDiv = document.getElementById("top-categories");
+    // } 
     // OTHERWISE FIND THE RIGHT SUB-CATEGORY ELEMENT
-    else {
-      theDiv = document.getElementById("parent_"+val.parentId);
-    };
+    // else {
+      // theDiv = document.getElementById("parent_"+val.parentId);
+    // };
     // IF SAID ELEMENT ISN'T THERE ... MAKE IT
+    
+    theDiv = document.getElementById("parent_"+val.parentId);
+    
     if(!theDiv) {
       var container = document.getElementById("categories");
       var newDiv = document.createElement('div');
@@ -230,20 +241,28 @@ search.clearInput = function(e){
 // trigger the getting of paginated results
 search.scroll = function(){
   if(app.view == "favorites") {    
+    console.log('no scrolling in favorites');
     return;
-  } 
-  else {
-    window.onscroll = function(){
-      scrollDiff = document.body.scrollHeight - document.body.scrollTop;
-      fromBottom = window.innerHeight + 300;
-      if(!search.features && fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
-        search.getResults();
-        el_loading.className = "visible";
-      };
+  } else {
+    scrollDiff = document.body.scrollHeight - document.body.scrollTop;
+    fromBottom = window.innerHeight + 300;
+    
+    if(!search.features && fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
+      console.log(scrollDiff+" "+fromBottom);
+      search.getResults();
+      el_loading.className = "visible";
     };
   };
-
 };
+var throttled = _.throttle(search.scroll, 100);
+
+$(window).scroll(search.scroll);
+
+$('#categories').delegate('label', 'click', function(e){
+  var cat = '#parent_'+$(this).attr('title');
+  $(this).siblings('label').hide();
+  $(cat).show();
+});
 
 // PRODUCTS ---------------------------------
 var products = {
@@ -258,7 +277,7 @@ products.checkImages = function(){
     }
   });
   var imgLoad = imagesLoaded(el_results);
-  imgLoad.on( 'progress', function(imgLoad, image) {
+  imgLoad.on('progress', function(imgLoad, image) {
     card = image.img.parentNode.parentNode;
     card.className = image.isLoaded ? 'auction is-loaded' : 'auction is-broken';
     products.loading = false;
@@ -286,10 +305,18 @@ products.getDetails = function(details){
   document.head.appendChild(jsonp);
 };
 
-jQuery('#results').delegate( 'a.details', 'click', function(e){
-  e.preventDefault();
-  details = $(this).attr('rel');
-  products.getDetails(details);
+// jQuery('#results').delegate( 'a.details', 'click', function(e){
+//   e.preventDefault();
+//   details = $(this).attr('rel');
+//   products.getDetails(details);
+// });
+
+jQuery('#view_options').delegate('a', 'click', function(e){
+  e.preventDefault()
+  $('#view_options a').removeClass('active');
+  $(this).addClass('active');
+  var view = $(this).attr('href');
+  $('#results').attr('data-columns', view);
 });
 
 (function(){
@@ -330,13 +357,13 @@ jQuery('#results').delegate( 'a.details', 'click', function(e){
 })();
 
 // HEADROOM NAVIGATION
-(function(){  
-  var searchNav = document.querySelector("header");
-  Headroom.options = {
-    tolerance : {up : 5, down : 0 },
-    offset : 40,
-    classes : {initial:"headroom",pinned:"headroom--pinned",unpinned:"headroom--unpinned",top:"headroom--top",notTop:"headroom--not-top"}
-  };
-  var headroom  = new Headroom(searchNav);
-  headroom.init();
-})();
+// (function(){  
+//   var searchNav = document.querySelector("header");
+//   Headroom.options = {
+//     tolerance : {up : 5, down : 0 },
+//     offset : 40,
+//     classes : {initial:"headroom",pinned:"headroom--pinned",unpinned:"headroom--unpinned",top:"headroom--top",notTop:"headroom--not-top"}
+//   };
+//   var headroom  = new Headroom(searchNav);
+//   headroom.init();
+// })();
