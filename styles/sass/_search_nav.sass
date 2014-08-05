@@ -4,9 +4,7 @@
   display: block
   font-size: 1em
   line-height: 1.5em
-  text-transform: uppercase
   font-weight: 300
-  color: #ccc
   padding: 0 20px  
 
 .search_form
@@ -18,21 +16,6 @@
     .form-control
       display: inline-block
       width: 160px
-
-  h3
-    @extend .search_font
-
-  
-.child_categories
-  display: none
-
-.terms
-  background: transparent
-
-.sellers
-  background: transparent
-
-.categories 
   input[type="radio"]
     display: none
     &:checked+label
@@ -41,6 +24,28 @@
     @extend .search_font
     &:hover
       cursor: pointer
+  h3
+    @extend .search_font
+    text-transform: uppercase
+  
+.terms
+  background: transparent
+
+.sellers
+  background: transparent
+
+.categories
+  color: rgba(#fff, .8)
+
+.sub_categories 
+  label
+    padding-left: 30px
+  .child_categories
+    color: rgba(#fff, .4)
+    display: none
+    
+div#parent_0
+  display: block
 
 .views
   border-top: 1px solid rgba(255,255,255,.9)

@@ -355,7 +355,7 @@ li {
     height: 44px; }
   .search_form .sellers {
     height: 44px; }
-  .search_form .categories {
+  .search_form .sub_categories {
     flex: 1;
     overflow-y: auto; }
   .search_form .views {
@@ -365,13 +365,11 @@ li {
   flex: 1;
   height: 100%; }
 
-.search_font, .search_form h3, .categories label {
+.search_font, .search_form label, .search_form h3 {
   display: block;
   font-size: 1em;
   line-height: 1.5em;
-  text-transform: uppercase;
   font-weight: 300;
-  color: #cccccc;
   padding: 0 20px; }
 
 .search_form {
@@ -383,9 +381,14 @@ li {
     .search_form .inline-form .form-control {
       display: inline-block;
       width: 160px; }
-
-.child_categories {
-  display: none; }
+  .search_form input[type="radio"] {
+    display: none; }
+    .search_form input[type="radio"]:checked + label {
+      background: rgba(0, 0, 0, 0.2); }
+  .search_form label:hover {
+    cursor: pointer; }
+  .search_form h3 {
+    text-transform: uppercase; }
 
 .terms {
   background: transparent; }
@@ -393,12 +396,17 @@ li {
 .sellers {
   background: transparent; }
 
-.categories input[type="radio"] {
+.categories {
+  color: rgba(255, 255, 255, 0.8); }
+
+.sub_categories label {
+  padding-left: 30px; }
+.sub_categories .child_categories {
+  color: rgba(255, 255, 255, 0.4);
   display: none; }
-  .categories input[type="radio"]:checked + label {
-    background: rgba(0, 0, 0, 0.2); }
-.categories label:hover {
-  cursor: pointer; }
+
+div#parent_0 {
+  display: block; }
 
 .views {
   border-top: 1px solid rgba(255, 255, 255, 0.9);

@@ -121,7 +121,7 @@ search.createCatItems = function(){
     theDiv = document.getElementById("parent_"+val.parentId);
     
     if(!theDiv) {
-      var container = document.getElementById("categories");
+      var container = document.getElementById("sub_categories");
       var newDiv = document.createElement('div');
       newDiv.id = 'parent_'+val.parentId;
       newDiv.setAttribute('class', 'child_categories');
@@ -258,9 +258,18 @@ var throttled = _.throttle(search.scroll, 100);
 
 $(window).scroll(search.scroll);
 
-$('#categories').delegate('label', 'click', function(e){
+$('#selected_categories').delegate('label', 'click', function(e){
+  $('.child_categories').hide();
+  $(this).nextAll('label').remove();
   var cat = '#parent_'+$(this).attr('title');
-  $(this).siblings('label').hide();
+  $(cat).show();
+});
+
+$('#sub_categories').delegate('label', 'click', function(e){
+  var cat = '#parent_'+$(this).attr('title');
+  $(this).clone().appendTo('#selected_categories');
+  $(this).parent('div').hide();
+  // $(this).siblings('label').hide();
   $(cat).show();
 });
 
