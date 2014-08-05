@@ -65,7 +65,8 @@ var search = {
   categories: [],
   sellers: [],
   seller: localStorage['seller'],
-  category: localStorage['category'],
+  // category: localStorage['category'],
+  category: 0,
   term: "",
   page: 1,
   pages: []
@@ -134,9 +135,9 @@ search.createCatItems = function(){
     catInput.setAttribute('type', 'radio');
     catInput.setAttribute('class', 'cat_radio');
     catInput.setAttribute('value', val.catId);
-    if(catInput.value == localStorage['category']){
-      catInput.setAttribute('checked', true);
-    }
+    // if(catInput.value == localStorage['category']){
+    //   catInput.setAttribute('checked', true);
+    // }
     catInput.setAttribute('name', 'category');
     catInput.addEventListener('change', search.changeCat, true);
     
@@ -355,9 +356,9 @@ jQuery('#view_options').delegate('a', 'click', function(e){
   if(!localStorage['seller'] || localStorage['seller'] === 'undefined') {    
     localStorage['seller'] = 12;
   };
-  if(!localStorage['category'] || localStorage['category'] === 'undefined') {    
-    localStorage['category'] = 0;
-  };
+  // if(!localStorage['category'] || localStorage['category'] === 'undefined') {    
+  //   localStorage['category'] = 0;
+  // };
 
   search.getSellerData();
   search.getCategoryData();
