@@ -47,19 +47,6 @@ favorites.updateLocalStorage = function(){
   localStorage['favorites'] = JSON.stringify(favorites.list);
 };
 
-app.view = function(view){
-  document.querySelectorAll('body').className(view);
-}
-
-$('#viewButtons').delegate('button', 'click', function(){
-  var view = this.value;
-  $('body').attr( "class", "").addClass(view);
-});
-
-jQuery('#results').delegate( '.fav_input', 'change', function(){
-  favorites.toggle(event.target.value);
-});
-
 // SEARCH ------------------------
 var search = { 
   categories: [],
@@ -108,19 +95,16 @@ search.getCategoryData = function(){
 // Populate Category Navigation
 search.createCatItems = function(){  
   search.categories.forEach(function(val){
-    var theDiv;
-    // IF IT'S A TOP TOP LEVEL CATEGORY
-    // if (val.parentId == undefined) {
-    //   theDiv = document.getElementById("top-categories");
-    // } 
-    // OTHERWISE FIND THE RIGHT SUB-CATEGORY ELEMENT
-    // else {
-      // theDiv = document.getElementById("parent_"+val.parentId);
-    // };
-    // IF SAID ELEMENT ISN'T THERE ... MAKE IT
     
-    theDiv = document.getElementById("parent_"+val.parentId);
+    // ADD EVENT LISTENERs TO THE STATIC ALL CATEGORY INPUT AND LABEL
+    var catAll = document.getElementById('cat_0');
+    catAll.addEventListener('change', search.changeCat, true);
+    var allLabel = document.getElementById('all_label');
+    allLabel.addEventListener('click', search.clickCat, false);
+
+    var theDiv = document.getElementById("parent_"+val.parentId);
     
+    // IF THERE'S ALREADY A DIV FOR THIS SUBCATEGORY
     if(!theDiv) {
       var container = document.getElementById("sub_categories");
       var newDiv = document.createElement('div');
@@ -135,9 +119,6 @@ search.createCatItems = function(){
     catInput.setAttribute('type', 'radio');
     catInput.setAttribute('class', 'cat_radio');
     catInput.setAttribute('value', val.catId);
-    // if(catInput.value == localStorage['category']){
-    //   catInput.setAttribute('checked', true);
-    // }
     catInput.setAttribute('name', 'category');
     catInput.addEventListener('change', search.changeCat, true);
     
@@ -148,7 +129,7 @@ search.createCatItems = function(){
     catLabel.innerHTML = val.catName;
     catLabel.addEventListener('click', search.clickCat, false);
     
-    // APPEND NEW ITEM TO APPROPRIATE Div
+    // APPEND NEW ITEM TO APPROPRIATE DIV
     theDiv.appendChild(catInput);
     theDiv.appendChild(catLabel);
   });
@@ -177,7 +158,7 @@ search.getResults = function() {
   products.loading = true;
   el_page_loading.className = "page_loading visible";
   var jsonp = document.createElement('script');
-  if(search.seller == 'all' && search.category == 0) {
+  if(search.seller == 'all' && search.category == 0 && search.term == "") {
     search.features = true;
     url = app.urlPrefix+'features?callback=search.JSONcallback';
   } else {
@@ -215,11 +196,9 @@ search.changeCat = function(){
   search.sendSearch();
 }
 
-search.clickCat = function(){  
-  // console.log('if there is a child pane > toggle class open on both the label and the pane');
-};
-
 search.sendSearch = function(){  
+  window.scrollTo(0,0);
+  search.pages = [];
   search.page = 1;
   search.loading = true;
   el_results.classList.add('busy');
@@ -241,24 +220,28 @@ search.clearInput = function(e){
 
 // trigger the getting of paginated results
 search.scroll = function(){
-  if(app.view == "favorites") {    
-    console.log('no scrolling in favorites');
-    return;
-  } else {
-    scrollDiff = document.body.scrollHeight - document.body.scrollTop;
-    fromBottom = window.innerHeight + 300;
-    
-    if(!search.features && fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
-      console.log(scrollDiff+" "+fromBottom);
-      search.getResults();
-      el_loading.className = "visible";
-    };
+  
+  scrollDiff = document.body.scrollHeight - document.body.scrollTop;
+  fromBottom = window.innerHeight + 300;
+
+  console.log();
+  console.log("seller: "+search.seller+" page: "+search.page+" loading: "+products.loading);
+  console.log("is "+fromBottom+" greater than "+scrollDiff);
+  console.log("search.pages "+search.pages);
+  console.log('------------------');
+
+  if(fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
+    console.log(scrollDiff+" "+fromBottom);
+    search.getResults();
+    el_loading.className = "visible";
   };
+
 };
 var throttled = _.throttle(search.scroll, 100);
 
 $(window).scroll(search.scroll);
 
+// CATEGORY SELECTION BEHAVIOR
 $('#selected_categories').delegate('label', 'click', function(e){
   $('.child_categories').hide();
   $(this).nextAll('label').remove();
@@ -297,6 +280,13 @@ products.checkImages = function(){
   });
 };
 
+var galleryTemplate = $('#galleryTemplate').html();
+products.showGallery = function(json){  
+  var template = Handlebars.compile(galleryTemplate);
+  $('#gallery').addClass('open').append( template(json) );
+};
+
+
 var detailsTemplate = $('#detailsTemplate').html();
 products.showDetails = function(json){  
   var template = Handlebars.compile(detailsTemplate);
@@ -315,12 +305,13 @@ products.getDetails = function(details){
   document.head.appendChild(jsonp);
 };
 
-// jQuery('#results').delegate( 'a.details', 'click', function(e){
-//   e.preventDefault();
-//   details = $(this).attr('rel');
-//   products.getDetails(details);
-// });
+jQuery('#results').delegate( 'a.image_link', 'click', function(e){
+  e.preventDefault();
+  details = $(this).attr('rel');
+  products.getDetails(details);
+});
 
+// SELECT THE NUMBER OF CARDS PER ROW
 jQuery('#view_options').delegate('a', 'click', function(e){
   e.preventDefault()
   $('#view_options a').removeClass('active');
@@ -356,9 +347,6 @@ jQuery('#view_options').delegate('a', 'click', function(e){
   if(!localStorage['seller'] || localStorage['seller'] === 'undefined') {    
     localStorage['seller'] = 12;
   };
-  // if(!localStorage['category'] || localStorage['category'] === 'undefined') {    
-  //   localStorage['category'] = 0;
-  // };
 
   search.getSellerData();
   search.getCategoryData();

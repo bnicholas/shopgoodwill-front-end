@@ -19,7 +19,7 @@
   input[type="radio"]
     display: none
     &:checked+label
-      background: rgba(0,0,0,.2)
+      // background: rgba(0,0,0,.2)
   label
     @extend .search_font
     &:hover
@@ -36,8 +36,13 @@
 
 .categories
   color: rgba(#fff, .8)
+  border-bottom: 1px solid rgba(#000, .6)
+  box-shadow: 0 6px 6px rgba(#000, .1)
+  padding-bottom: 10px
 
 .sub_categories 
+  background: rgba(#000, .2)
+  padding: 10px 0
   label
     padding-left: 30px
   .child_categories
@@ -48,19 +53,37 @@ div#parent_0
   display: block
 
 .views
-  border-top: 1px solid rgba(255,255,255,.9)
-  text-align: center
+  border-top: 1px solid rgba(255,255,255,.1)
+  box-shadow: 0 -6px 6px rgba(#000, .1)
+  .view_buttons
+    text-align: center
   a
+    transition: opacity .25s ease-in-out
+    box-sizing: content-box
+    background-position: center
+    background-repeat: no-repeat
     display: inline-block
-    width: 40px
-    padding: 5px 10px 
+    width: 34px
+    height: 30px
+    padding: 0 10px
     border-radius: 4px
-    margin: 5px
+    overflow: hidden
+    text-indent: 999px
+    opacity: .1
+    &.view_1
+      background-image: url('../images/1-up.png')
+    &.view_2
+      background-image: url('../images/2-up.png')
+    &.view_3
+      background-image: url('../images/3-up.png')
+    &.view_4
+      background-image: url('../images/4-up.png')
     &:hover
       text-decoration: none
+      opacity: .3
     &.active
-      border: 2px solid rgba(#fff, .5)
+      opacity: .9
   h3
-    text-align: center
+    color: rgba(#fff, .8)
     
   

@@ -972,34 +972,29 @@
     "parentId": 7
   },
   {
-   "catName" : "Atari",
-   "catId": "atari",
-   "parentId": 33
-  },
-  {
-    "catName": "2600",
+    "catName": "Atari 2600",
     "catId": 305,
-    "parentId": "atari"
+    "parentId": 33
   },
   {
-    "catName": "5200",
+    "catName": "Atari 5200",
     "catId": 306,
-    "parentId": "atari"
+    "parentId": 33
   },
   {
-    "catName": "7800",
+    "catName": "Atari 7800",
     "catId": 307,
-    "parentId": "atari"
+    "parentId": 33
   },
   {
-    "catName": "Jaguar",
+    "catName": "Atari Jaguar",
     "catId": 308,
-    "parentId": "atari"
+    "parentId": 33
   },
   {
-    "catName": "Lynx",
+    "catName": "Atari Lynx",
     "catId": 309,
-    "parentId": "atari"
+    "parentId": 33
   },
   {
     "catName": "ColecoVision",
@@ -1013,148 +1008,128 @@
   },
   {
     "catName": "Xbox",
-    "catId": "xbox",
-    "parentId": 33 
-  },
-  {
-    "catName": "Xbox",
     "catId": 296,
-    "parentId": "xbox"
+    "parentId": 33
   },
   {
     "catName": "Xbox 360",
     "catId": 297,
-    "parentId": "xbox"
+    "parentId": 33
   },
   {
     "catName": "XBox One",
     "catId": 444,
-    "parentId": "xbox"
+    "parentId": 33
   },
   {
-    "catName": "Nintendo",
-    "catId": "nintendo",
-    "parentId": 33 
-  },
-  {
-    "catName": "3DS",
+    "catName": "Nintendo 3DS",
     "catId": 302,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "64",
+    "catName": "Nintendo 64",
     "catId": 301,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "DS",
+    "catName": "Nintendo DS",
     "catId": 303,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "GameBoy",
+    "catName": "Nintendo GameBoy",
     "catId": 304,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "GameBoy Advance",
+    "catName": "Nintendo GameBoy Advance",
     "catId": 323,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "GameCube",
+    "catName": "Nintendo GameCube",
     "catId": 324,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "NES",
+    "catName": "OG Nintendo",
     "catId": 298,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "SNES",
+    "catName": "Super Nintendo",
     "catId": 299,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "Wii",
+    "catName": "Nintendo Wii",
     "catId": 300,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
     "catName": "Wii U",
     "catId": 354,
-    "parentId": "nintendo"
+    "parentId": 33
   },
   {
-    "catName": "Sega",
-    "catId": "sega",
-    "parentId": 33 
-  },  
-  {
-    "catName": "CD",
+    "catName": "Sega CD",
     "catId": 450,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
-    "catName": "Dreamcast",
+    "catName": "Sega Dreamcast",
     "catId": 312,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
-    "catName": "Game Gear",
+    "catName": "Sega Game Gear",
     "catId": 313,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
-    "catName": "Genesis",
+    "catName": "Sega Genesis",
     "catId": 314,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
-    "catName": "Master System",
+    "catName": "Sega Master System",
     "catId": 315,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
-    "catName": "Saturn",
+    "catName": "Sega Saturn",
     "catId": 316,
-    "parentId": "sega"
+    "parentId": 33
   },
   {
     "catName": "Playstation",
-    "catId": "playstation",
-    "parentId": 33 
-  },
-  {
-    "catName": "PS-1",
     "catId": 293,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "PS-2",
     "catId": 294,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "PS-3",
     "catId": 295,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "PS-4",
     "catId": 443,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "PSP",
     "catId": 317,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "PS-Vita",
     "catId": 318,
-    "parentId": "playstation"
+    "parentId": 33
   },
   {
     "catName": "Home Electronics",

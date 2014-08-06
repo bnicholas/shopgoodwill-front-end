@@ -24,14 +24,14 @@
     -->
 </head>
 
-<body class="search_view">
+<body>
   <div class="flex">
     
     <div class="search_nav">
 
       <form role="form" id="search_form" name="searchForm" class="flex search_form">
         <div class="input-group terms">
-          <input class="form-control" id="search-term" name="term" type="text" placeholder="Type ye words if ye dare.">
+          <input class="form-control" id="search-term" name="term" type="text" placeholder="Search">
           <span class="input-group-btn">
             <button class="form-control btn btn-default" id="input_clear" type="button">Clear</button>
           </span>
@@ -47,7 +47,7 @@
           
           <div id="selected_categories">
             <input id="cat_0" type="radio" class="cat_radio" value="0" checked="true" name="category">
-            <label title="0" for="cat_0">All</label>  
+            <label id="all_label" title="0" for="cat_0">All</label>  
           </div>
         </div>
         
@@ -58,16 +58,22 @@
 
         <div id="view_options" class="views">
           <h3>auction layout</h3>
-          <a href="1">1</a>
-          <a href="2">2</a>
-          <a href="3">3</a>
-          <a href="4" class="active">4</a>
+          <div class="view_buttons">
+            <a class="view_1" href="1">1</a>
+            <a class="view_2" href="2">2</a>
+            <a class="view_3" href="3">3</a>
+            <a class="view_4 active" href="4">4</a>
+          </div>
         </div>
       </form>
       
     </div>
     
     <div class="main">
+      
+      <div id="gallery" class="gallery">
+        <!-- BIG IMAGES -->
+      </div>
       
       <section id="results" class="results_view" data-columns="4">
         <!-- SEARCH RESULTS -->
@@ -88,27 +94,63 @@
     
     </div>
   </div>
+  
+
   <div class="modal fade" id="auctionModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <!-- populated by mustache template -->
   </div>
   
   <script id="favoritesTemplate" type="text/x-handlebars-template"> </script>
-  <script id="detailsTemplate" type="text/x-handlebars-template"> </script>
-  <script id="auctionTemplate" type="text/x-handlebars-template">
+  
+  <script id="galleryTemplate" type="text/x-handlebars-template"> 
     {{#each this}}
-    <div class="card">
-    <div class="auction">
-      <div class="card_top">
-        <span class="auction_ending"><em>ends in</em> {{itemEnd}}</span>
-      </div>
-      <a rel="{{itemNumber}}" href="{{itemURL}}" target="_blank" class="image_link">
-        <img src="{{itemImage}}" alt="" class="auction_thumb">
-      </a>
-      <div class="card_bottom">
-        <span class="auction_price">${{itemPrice}}</span>
-        <span class="auction_bids">{{itemBids}} Bids</span>
+      {{#each images}}
+        <img src="{{image}}" alt="">
+      {{/each}}
+    {{/each}}
+  </script>
+
+  <script id="detailsTemplate" type="text/x-handlebars-template"> 
+    {{#each this}}
+      <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+          <h4 class="modal-title" id="auctionModalLabel">{{title}}</h4>
+        </div>
+        
+        <div class="modal-body">
+          {{#each images}}
+            <img src="{{image}}" alt="">
+          {{/each}}
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a href="http://www.shopgoodwill.com/viewItem.asp?itemID={{id}}" target="_blank" class="btn btn-primary">Go to Auction</a>
+        </div>
+
       </div>
     </div>
+    {{/each}}
+  </script>
+  <script id="auctionTemplate" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="card" ontouchstart="this.classList.toggle('hover');">
+      <div class="auction">
+        <div class="card_top">
+          <span class="auction_ending"><em>ends in</em> {{itemEnd}}</span>
+        </div>
+        <a rel="{{itemNumber}}" href="{{itemURL}}" target="_blank" class="image_link">
+          <img src="{{itemImage}}" alt="" class="auction_thumb">
+        </a>
+        <div class="card_bottom">
+          <h5>{{itemName}}</h5>
+          <span class="auction_price">${{itemPrice}}</span>
+          <span class="auction_bids">{{itemBids}} Bids</span>
+        </div>
+      </div>
     </div>
     {{/each}}
   </script>
