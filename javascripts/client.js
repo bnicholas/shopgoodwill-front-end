@@ -1,8 +1,18 @@
 'use strict';
 
-// var urlPrefix = "http://goodwillapi.herokuapp.com/";
-var urlPrefix = "http://localhost:5000/";
-// var urlPrefix = "http://192.168.5.2:5000/";
+var urlPrefix = "http://goodwillapi.herokuapp.com/";
+
+// switch(window.location.hostname) {
+//   case 'localhost':
+//     urlPrefix = "http://localhost:5000/";
+//     break;
+//   case 'bnicholas.github.io':
+//     urlPrefix = "http://goodwillapi.herokuapp.com/";
+//     break;
+//   default:
+//     urlPrefix = "http://goodwillapi.herokuapp.com/";
+// }
+
 
 if(!localStorage['favorites']) {
   localStorage.setItem('favorites', '[]');

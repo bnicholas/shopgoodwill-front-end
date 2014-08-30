@@ -2,12 +2,21 @@ var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,
 ,el_details ,el_no_results ,el_loading ,el_the_end ,el_results, el_page_loading;
 
 var app = {
-  // "http://goodwillapi.herokuapp.com/"
-  urlPrefix: "http://localhost:5000/",
-  // urlPrefix: "http://192.168.1.64:5000/",
+  urlPrefix: "http://goodwillapi.herokuapp.com/",
   debug: true,
   view: "search"
 };
+
+// switch(window.location.hostname) {
+//   case 'localhost':
+//     app.urlPrefix = "http://localhost:5000/";
+//     break;
+//   case 'bnicholas.github.io':
+//     app.urlPrefix = "http://goodwillapi.herokuapp.com/";
+//     break;
+//   default:
+//     app.urlPrefix = "http://goodwillapi.herokuapp.com/";
+// }
 
 var cardTemplate = $('#auctionTemplate').html();
 
@@ -62,7 +71,7 @@ var search = {
 // Get and Set search.sellers
 search.getSellerData = function(){  
   sellers = new XMLHttpRequest();
-  sellers.open('GET', '/sellers.json', false);
+  sellers.open('GET', './sellers.json', false);
   sellers.onload = function() {
     search.sellers = JSON.parse(sellers.responseText);
     search.createSellers();
@@ -85,7 +94,7 @@ search.createSellers = function(){
 // Get and Set search.categories
 search.getCategoryData = function(){  
   categories = new XMLHttpRequest();
-  categories.open('GET', '/categories.json', false);
+  categories.open('GET', './categories.json', false);
   categories.onload = function() {
     search.categories = JSON.parse(categories.responseText);
     search.createCatItems();
