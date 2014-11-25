@@ -72,7 +72,7 @@ var search = {
 // Get and Set search.sellers
 search.getSellerData = function(){  
   sellers = new XMLHttpRequest();
-  sellers.open('GET', '../sellers.json', false);
+  sellers.open('GET', 'sellers.json', false);
   sellers.onload = function() {
     search.sellers = JSON.parse(sellers.responseText);
     search.createSellers();
@@ -95,7 +95,7 @@ search.createSellers = function(){
 // Get and Set search.categories
 search.getCategoryData = function(){  
   categories = new XMLHttpRequest();
-  categories.open('GET', '../categories.json', false);
+  categories.open('GET', 'categories.json', false);
   categories.onload = function() {
     search.categories = JSON.parse(categories.responseText);
     search.createCatItems();
