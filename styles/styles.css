@@ -1,14 +1,15 @@
-/* (cs)spinner - https://github.com/jh3y/-cs-spinner
- * Licensed under the MIT license
- *
- * Jhey Tompkins (c) 2014
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
+/*
+  (cs)spinner - https://github.com/jh3y/-cs-spinner
+  Licensed under the MIT license
+
+  Jhey Tompkins (c) 2014
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
 /* BASE */
 .csspinner {
   position: relative; }
@@ -22,7 +23,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  background-color: #999999;
+  background-color: #999;
   opacity: 0.6; }
 
 .csspinner:after {
@@ -37,7 +38,7 @@
   transition: all 0.75s ease 0s;
   -webkit-transition: all 0.75s ease 0s;
   border-radius: 100%;
-  border-top: 4px solid #555555;
+  border-top: 4px solid #555;
   animation: standard 0.75s infinite linear;
   -webkit-animation: standard 0.75s infinite linear; }
 
@@ -52,32 +53,36 @@
 
   to {
     -webkit-transform: rotate(360deg); } }
+
 @keyframes standard {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
 
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
 /* TRADITIONAL */
 .csspinner.traditional:after {
-  border-right: 4px solid #777777;
-  border-top: 4px solid #777777;
-  border-left: 4px solid #999999;
-  border-bottom: 4px solid #bbbbbb; }
+  border-right: 4px solid #777;
+  border-top: 4px solid #777;
+  border-left: 4px solid #999;
+  border-bottom: 4px solid #BBB; }
 
-/* DOUBLE UP */
+/* DOUBLE UP*/
 .csspinner.double-up:after {
-  border-right: 4px solid #e74c3c;
-  border-top: 4px double #e74c3c;
-  border-left: 4px double #e74c3c;
-  border-bottom: 4px double #e74c3c; }
+  border-right: 4px solid #E74C3C;
+  border-top: 4px double #E74C3C;
+  border-left: 4px double #E74C3C;
+  border-bottom: 4px double #E74C3C; }
 
 /* DUO */
 .csspinner.duo:after {
-  border-right: 4px solid #333333;
-  border-left: 4px solid #333333;
-  border-top: 4px solid #f1c40f;
-  border-bottom: 4px solid #f1c40f; }
+  border-right: 4px solid #333;
+  border-left: 4px solid #333;
+  border-top: 4px solid #F1C40F;
+  border-bottom: 4px solid #F1C40F; }
 
 /* SPHERICAL */
 .csspinner.sphere.horizontal:after, .csspinner.sphere:after {
@@ -96,28 +101,40 @@
 
 @-webkit-keyframes sphere {
   from {
+    -webkit-box-shadow: inset 45px 0px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset 45px 0px 10px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset-45px 0px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset-45px 0px 10px rgba(0, 0, 0, 0.5); } }
+
 @keyframes sphere {
   from {
+    -webkit-box-shadow: inset 45px 0px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset 45px 0px 10px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset-45px 0px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset-45px 0px 10px rgba(0, 0, 0, 0.5); } }
+
 @-webkit-keyframes sphere-v {
   from {
+    -webkit-box-shadow: inset 0px 45px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 45px 10px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset -45px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset -45px 10px rgba(0, 0, 0, 0.5); } }
+
 @keyframes sphere-v {
   from {
+    -webkit-box-shadow: inset 0px 45px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 45px 10px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset -45px 10px rgba(0, 0, 0, 0.5);
     box-shadow: inset -45px 10px rgba(0, 0, 0, 0.5); } }
+
 /* BAR */
 .csspinner.bar:after {
   height: 20px;
@@ -129,37 +146,50 @@
 
 @-webkit-keyframes bar {
   from {
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset 80px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 80px 0px 0px rgba(0, 0, 0, 0.5); } }
+
 @keyframes bar {
   from {
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5); }
 
   to {
+    -webkit-box-shadow: inset 80px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 80px 0px 0px rgba(0, 0, 0, 0.5); } }
+
 .csspinner.bar.follow:after {
   animation: bar-follow 1s infinite linear;
   -webkit-animation: bar-follow 1s infinite linear; }
 
 @-webkit-keyframes bar-follow {
   0% {
+    -webkit-box-shadow: inset 40px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 40px 0px 0px rgba(0, 0, 0, 0.5); }
 
   100% {
+    -webkit-box-shadow: inset-40px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset-40px 0px 0px rgba(0, 0, 0, 0.5); } }
+
 @keyframes bar-follow {
   0% {
+    -webkit-box-shadow: inset 40px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset 40px 0px 0px rgba(0, 0, 0, 0.5); }
 
   100% {
+    -webkit-box-shadow: inset-40px 0px 0px rgba(0, 0, 0, 0.5);
     box-shadow: inset-40px 0px 0px rgba(0, 0, 0, 0.5); } }
+
 /* LINE */
 .csspinner.line:after {
   height: 20px;
   border-radius: 0;
   border: none;
+  -webkit-box-shadow: inset-10px 0px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset-10px 0px 0px rgba(0, 0, 0, 0.5);
   animation: line 0.75s infinite linear;
   -webkit-animation: line 0.75s infinite linear; }
@@ -170,12 +200,14 @@
 
   to {
     width: 50px; } }
+
 @keyframes line {
   from {
     width: 10px; }
 
   to {
     width: 50px; } }
+
 .csspinner.line.grow:after {
   animation: line 0.75s infinite linear, line-grow 0.75s infinite linear;
   -webkit-animation: line 0.75s infinite linear, line-grow 0.75s infinite linear; }
@@ -192,6 +224,7 @@
   100% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
+
 @-webkit-keyframes line-grow {
   0% {
     transform: scaleY(1);
@@ -204,6 +237,7 @@
   100% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
+
 /* LINE BACK AND forth */
 .csspinner.line.back-and-forth:after {
   animation: line-back-and-forth 1s infinite linear;
@@ -218,6 +252,7 @@
 
   100% {
     width: 10px; } }
+
 @keyframes line-back-and-forth {
   0% {
     width: 10px; }
@@ -227,6 +262,7 @@
 
   100% {
     width: 10px; } }
+
 .csspinner.line.back-and-forth.grow:after {
   animation: line-back-and-forth 1s infinite linear, line-back-and-forth-grow 1s infinite linear;
   -webkit-animation: line-back-and-forth 1s infinite linear, line-back-and-forth-grow 1s infinite linear; }
@@ -251,6 +287,7 @@
   100% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
+
 @-webkit-keyframes line-back-and-forth-grow {
   0% {
     transform: scaleY(1);
@@ -271,6 +308,7 @@
   100% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1); } }
+
 /* BOX SHADOWING */
 .csspinner.shadow:after {
   animation: spin-shadow 0.25s infinite linear;
@@ -294,31 +332,41 @@
 
 @-webkit-keyframes spin-shadow {
   0% {
+    -webkit-box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5); }
 
   25% {
+    -webkit-box-shadow: inset-5px 5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset-5px 5px 5px rgba(0, 0, 0, 0.5); }
 
   50% {
+    -webkit-box-shadow: inset-5px-5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset-5px-5px 5px rgba(0, 0, 0, 0.5); }
 
   100% {
+    -webkit-box-shadow: inset 0px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 5px rgba(0, 0, 0, 0.5); } }
+
 @keyframes spin-shadow {
   0% {
+    -webkit-box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5); }
 
   25% {
+    -webkit-box-shadow: inset-5px 5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset-5px 5px 5px rgba(0, 0, 0, 0.5); }
 
   50% {
+    -webkit-box-shadow: inset-5px-5px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset-5px-5px 5px rgba(0, 0, 0, 0.5); }
 
   100% {
+    -webkit-box-shadow: inset 0px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 5px rgba(0, 0, 0, 0.5); } }
+
 body {
   background: rgba(0, 0, 0, 0.1);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300; }
 
 ul {
@@ -335,8 +383,14 @@ li {
   opacity: 1; }
 
 .flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 100%; }
 
@@ -345,6 +399,8 @@ li {
   height: 100%; }
 
 .search_form {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 250px;
   position: fixed;
@@ -356,12 +412,16 @@ li {
   .search_form .sellers {
     height: 44px; }
   .search_form .sub_categories {
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     overflow-y: auto; }
   .search_form .views {
     height: 110px; }
 
 .main {
+  -webkit-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 100%;
   position: relative; }
@@ -398,6 +458,7 @@ li {
 .categories {
   color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
   padding-bottom: 10px; }
 
@@ -415,11 +476,15 @@ div#parent_0 {
 
 .views {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.1); }
   .views .view_buttons {
     text-align: center; }
   .views a {
+    -webkit-transition: opacity 0.25s ease-in-out;
     transition: opacity 0.25s ease-in-out;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
     background-position: center;
     background-repeat: no-repeat;
@@ -432,13 +497,13 @@ div#parent_0 {
     text-indent: 999px;
     opacity: 0.1; }
     .views a.view_1 {
-      background-image: url("../images/1-up.png"); }
+      background-image: url('../images/1-up.png'); }
     .views a.view_2 {
-      background-image: url("../images/2-up.png"); }
+      background-image: url('../images/2-up.png'); }
     .views a.view_3 {
-      background-image: url("../images/3-up.png"); }
+      background-image: url('../images/3-up.png'); }
     .views a.view_4 {
-      background-image: url("../images/4-up.png"); }
+      background-image: url('../images/4-up.png'); }
     .views a:hover {
       text-decoration: none;
       opacity: 0.3; }
@@ -448,9 +513,14 @@ div#parent_0 {
     color: rgba(255, 255, 255, 0.8); }
 
 .results_view {
+  -webkit-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
   overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative; }
   .results_view.busy {
@@ -464,6 +534,7 @@ div#parent_0 {
   display: inline-block;
   vertical-align: top;
   padding: 0.2%;
+  -webkit-transition: width 0.5s;
   transition: width 0.5s;
   position: relative; }
   [data-columns="4"] .card {
@@ -476,7 +547,7 @@ div#parent_0 {
     width: 100%; }
 
 .auction {
-  background: white url(../images/spinner.gif) center no-repeat;
+  background: #fff url(../images/spinner.gif) center no-repeat;
   padding: 10px;
   font-size: 13px;
   color: rgba(0, 0, 0, 0.9);
@@ -497,6 +568,7 @@ div#parent_0 {
     margin: 0;
     padding: 10px 0; }
   .auction .auction_thumb {
+    -webkit-transition: opacity 0.25s ease-in-out;
     transition: opacity 0.25s ease-in-out;
     opacity: 0;
     width: 100%;
@@ -554,5 +626,3 @@ div#parent_0 {
     display: block; }
   .gallery img {
     margin: 0 auto; }
-
-/*# sourceMappingURL=styles.css.map */

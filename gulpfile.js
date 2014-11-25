@@ -83,7 +83,7 @@ gulp.task('javascript', function() {
 gulp.task('sass', function() {
   gulp.src('./styles/sass/styles.sass')
   .pipe(sass({'quiet': true, sourcemap: true }))
-  // .pipe(prefix("last 1 version", "> 1%"))
+  .pipe(prefix("last 1 version", "> 1%"))
   // .pipe(minifyCSS())
   // .pipe(rename('styles.min.css'))
   .pipe(gulp.dest('./styles/'));
