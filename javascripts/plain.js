@@ -2,6 +2,7 @@ var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,
 ,el_details ,el_no_results ,el_loading ,el_the_end ,el_results, el_page_loading;
 
 var app = {
+  // urlPrefix: "http://localhost:5000/",
   urlPrefix: "http://goodwillapi.herokuapp.com/",
   debug: true,
   view: "search"
@@ -171,8 +172,10 @@ search.getResults = function() {
     search.features = true;
     url = app.urlPrefix+'features?callback=search.JSONcallback';
   } else {
+    console.log("SEARCH CATEGORY: "+search.category);
     search.features = false;
-    url = app.urlPrefix+'auctions?seller='+search.seller+'&page='+search.page+'&category='+search.category+'&term='+search.term+'&callback=search.displayResults';
+    url = app.urlPrefix+'auctions?seller='+search.seller+'&page='+search.page+'&cat='+search.category+'&term='+search.term+'&callback=search.displayResults';
+    console.log("URL: "+url);
   }
   //console.log(url);
   jsonp.src = url;
