@@ -1,63 +1,61 @@
-var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,el_sellers ,el_catRadio 
+var el_categories ,el_subCategories ,el_allSellers ,el_form ,el_clear ,el_term ,el_sellers ,el_catRadio
 ,el_details ,el_no_results ,el_loading ,el_the_end ,el_results, el_page_loading;
 
-var app = {
-  urlPrefix: "http://goodwillapi.herokuapp.com/",
-  debug: true,
-  view: "search"
-};
+var wtfu = false;
 
-// switch(window.location.hostname) {
-//   case 'localhost':
-//     app.urlPrefix = "http://localhost:5000/";
-//     break;
-//   case 'bnicholas.github.io':
-//     app.urlPrefix = "http://goodwillapi.herokuapp.com/";
-//     break;
-//   default:
-//     app.urlPrefix = "http://goodwillapi.herokuapp.com/";
-// }
+var wtf = function(what) {
+  if(wtfu == true) {
+    console.log(what);
+  }
+}
+
+var app = {
+  // urlPrefix: "http://goodwillapi.herokuapp.com/",
+  urlPrefix: "http://localhost:5000/",
+  debug: true,
+  view: "search" };
 
 var cardTemplate = $('#auctionTemplate').html();
+var galleryTemplate = $('#galleryTemplate').html();
+var detailsTemplate = $('#detailsTemplate').html();
 
 // FAVORITES ------------------
-var favorites = {
-  list: JSON.parse(localStorage.getItem('favorites'))
+var item = {
+  list: JSON.parse(localStorage.getItem('item'))
 };
 
-favorites.show = function(json){  
-  var favoritesTemplate = $('#favoritesTemplate').html();
-  var template = Handlebars.compile(favoritesTemplate);
-  $('body').toggleClass('favorites');
-  $('#favorites').html( template(json) );
+item.show = function(json){
+  var galTemplate = Handlebars.compile(galleryTemplate);
+  $('body').toggleClass('item');
+  $('#brian').html( galTemplate(json) );
 };
 
-favorites.view = function(){
-  app.view = "favorites";
+item.view = function(){
+  app.view = "item";
   var jsonp = document.createElement('script');
-  details = favorites.list.join();
-  jsonp.src = app.urlPrefix+'favorites?auctions='+details+'&callback=favorites.show';
-  document.head.appendChild(jsonp);  
+  details = item.list.join();
+  jsonp.src = app.urlPrefix+'item?auctions='+details+'&callback=item.show';
+  document.head.appendChild(jsonp);
 };
 
-favorites.toggle = function(v) {  
+item.toggle = function(v) {
   var favId = v;
-  var addRemove = favorites.list.indexOf(favId);
+  var addRemove = item.list.indexOf(favId);
   if( addRemove != -1) {
-    favorites.list.splice(addRemove,1);
-    favorites.updateLocalStorage();
+    item.list.splice(addRemove,1);
+    item.updateLocalStorage();
   } else {
-    favorites.list.push(favId);
-    favorites.updateLocalStorage();
+    item.list.push(favId);
+    item.updateLocalStorage();
   };
 };
-// convert localStorage favorites to array
-favorites.updateLocalStorage = function(){
-  localStorage['favorites'] = JSON.stringify(favorites.list);
+// convert localStorage item to array
+item.updateLocalStorage = function(){
+  localStorage['item'] = JSON.stringify(item.list);
 };
 
 // SEARCH ------------------------
-var search = { 
+var search = {
   categories: [],
   sellers: [],
   seller: localStorage['seller'],
@@ -69,18 +67,19 @@ var search = {
 };
 
 // Get and Set search.sellers
-search.getSellerData = function(){  
+search.getSellerData = function(){
+  wtf("search.getSellerData");
   sellers = new XMLHttpRequest();
-  sellers.open('GET', '../sellers.json', false);
+  sellers.open('GET', '../sellers.json');
   sellers.onload = function() {
     search.sellers = JSON.parse(sellers.responseText);
     search.createSellers();
   };
   sellers.send();
 };
-
 // Populate Seller Navigation
-search.createSellers = function(){  
+search.createSellers = function(){
+  wtf("search.createSellers");
   search.sellers.forEach(function(value) {
     sellerSelect = document.getElementById('sellers');
     newoption = document.createElement('option');
@@ -92,9 +91,10 @@ search.createSellers = function(){
 
 };
 // Get and Set search.categories
-search.getCategoryData = function(){  
+search.getCategoryData = function(){
+  wtf("search.getCategoryData");
   categories = new XMLHttpRequest();
-  categories.open('GET', '../categories.json', false);
+  categories.open('GET', '../categories.json');
   categories.onload = function() {
     search.categories = JSON.parse(categories.responseText);
     search.createCatItems();
@@ -102,17 +102,17 @@ search.getCategoryData = function(){
   categories.send();
 };
 // Populate Category Navigation
-search.createCatItems = function(){  
+search.createCatItems = function(){
+  wtf("search.createCatItems");
   search.categories.forEach(function(val){
-    
+
     // ADD EVENT LISTENERs TO THE STATIC ALL CATEGORY INPUT AND LABEL
     var catAll = document.getElementById('cat_0');
     catAll.addEventListener('change', search.changeCat, true);
     var allLabel = document.getElementById('all_label');
     allLabel.addEventListener('click', search.clickCat, false);
-
     var theDiv = document.getElementById("parent_"+val.parentId);
-    
+
     // IF THERE'S ALREADY A DIV FOR THIS SUBCATEGORY
     if(!theDiv) {
       var container = document.getElementById("sub_categories");
@@ -122,6 +122,7 @@ search.createCatItems = function(){
       container.appendChild(newDiv);
       theDiv = document.getElementById("parent_"+val.parentId);
     };
+
     // CREATE THE INPUT
     var catInput = document.createElement('input');
     catInput.id = 'cat_'+val.catId;
@@ -130,14 +131,14 @@ search.createCatItems = function(){
     catInput.setAttribute('value', val.catId);
     catInput.setAttribute('name', 'category');
     catInput.addEventListener('change', search.changeCat, true);
-    
+
     // CREATE THE LABEL
     var catLabel = document.createElement('label');
     catLabel.setAttribute('title', val.catId);
     catLabel.setAttribute('for', 'cat_'+val.catId);
     catLabel.innerHTML = val.catName;
     catLabel.addEventListener('click', search.clickCat, false);
-    
+
     // APPEND NEW ITEM TO APPROPRIATE DIV
     theDiv.appendChild(catInput);
     theDiv.appendChild(catLabel);
@@ -146,11 +147,10 @@ search.createCatItems = function(){
   el_subCategories = document.getElementsByClassName('child_categories'); // Sub Category Divs
 };
 // process JSONp search results
-search.displayResults = function(json) {  
+search.displayResults = function(json) {
+  wtf("search.displayResults");
   var old_results = document.getElementsByClassName('.auction');
-  if(search.page == 1) {
-    el_results.innerHTML = "";
-  };
+  if(search.page == 1) { el_results.innerHTML = ""; };
   el_results.classList.remove('busy');
   products.loading = true;
   var cardTmpl = Handlebars.compile(cardTemplate);
@@ -160,67 +160,81 @@ search.displayResults = function(json) {
   search.page = search.page+1;
   search.scroll();
 };
-
 // getting results JSONp
-search.getResults = function() {  
+search.getResults = function() {
+  wtf("search.getResults");
   search.term = el_term.value;
   products.loading = true;
   el_page_loading.className = "page_loading visible";
   var jsonp = document.createElement('script');
   if(search.seller == 'all' && search.category == 0 && search.term == "") {
     search.features = true;
+    wtf("search.features = true");
     url = app.urlPrefix+'features?callback=search.JSONcallback';
   } else {
     search.features = false;
     url = app.urlPrefix+'auctions?seller='+search.seller+'&page='+search.page+'&category='+search.category+'&term='+search.term+'&callback=search.displayResults';
   }
-  //console.log(url);
+  wtf(url);
   jsonp.src = url;
   document.head.appendChild(jsonp);
 };
-
-search.setSeller = function(seller){  
+search.setSeller = function(seller){
+  wtf("search.setSeller");
   localStorage['seller'] = seller;
   search.seller = seller;
 };
 
-search.setCategory = function(category){  
+search.setCategory = function(category){
+  wtf("search.setCategory");
+  wtf("category: "+category);
   localStorage['category'] = category;
   search.category = category;
+  wtf(search);
+  search.sendSearch();
 };
 
-search.changeSeller = function(){  
+search.changeSeller = function(){
+  wtf("search.changeSeller");
   search.setSeller(this.value);
   search.sendSearch();
 }
 
-search.allSellers = function(){  
+search.allSellers = function(){
+  wtf("search.allSellers");
   el_sellers.value = 'all';
   search.setSeller('all');
   search.sendSearch();
 };
 
-search.changeCat = function(){  
+search.changeCat = function(){
+  wtf("search.changeCat");
   search.setCategory(this.value);
-  search.sendSearch();
+  wtf("search.changeCat: "+this.value);
+  // search.sendSearch();
 }
 
-search.sendSearch = function(){  
+search.sendSearch = function(){
+  wtf("search.sendSearch");
   window.scrollTo(0,0);
   search.pages = [];
   search.page = 1;
   search.loading = true;
   el_results.classList.add('busy');
+  wtf(search.category);
   search.getResults();
   return false;
 };
 
-search.submitForm = function(e){  
+search.submitForm = function(e){
+  wtf("search.submitForm");
   e.preventDefault();
   search.sendSearch();
   return false;
 };
-search.clearInput = function(e){  
+
+search.clearInput = function(e){
+  wtf("search.clearInput");
   e.preventDefault();
   el_term.value = "";
   search.sendSearch();
@@ -229,18 +243,18 @@ search.clearInput = function(e){
 
 // trigger the getting of paginated results
 search.scroll = function(){
-  
+  wtf("search.scroll");
   scrollDiff = document.body.scrollHeight - document.body.scrollTop;
   fromBottom = window.innerHeight + 300;
 
-  console.log();
-  console.log("seller: "+search.seller+" page: "+search.page+" loading: "+products.loading);
-  console.log("is "+fromBottom+" greater than "+scrollDiff);
-  console.log("search.pages "+search.pages);
-  console.log('------------------');
+  // wtf();
+  // wtf("seller: "+search.seller+" page: "+search.page+" loading: "+products.loading);
+  // wtf("is "+fromBottom+" greater than "+scrollDiff);
+  // wtf("search.pages "+search.pages);
+  // wtf('------------------');
 
-  if(fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {        
-    console.log(scrollDiff+" "+fromBottom);
+  if(fromBottom >= scrollDiff && !products.loading && search.pages.indexOf(search.page) == -1) {
+    wtf(scrollDiff+" "+fromBottom);
     search.getResults();
     el_loading.className = "visible";
   };
@@ -272,9 +286,10 @@ var products = {
 };
 
 // check for search results images loaded
-products.checkImages = function(){  
+products.checkImages = function(){
+  wtf("products.checkImages");
   $('.fav_input').each(function(){
-    if( favorites.list.indexOf(this.value) != -1 ) {
+    if( item.list.indexOf(this.value) != -1 ) {
       $(this).attr('checked', true);
     }
   });
@@ -288,30 +303,30 @@ products.checkImages = function(){
     el_details = document.getElementsByClassName('details'); // a.details
   });
 };
-
-var galleryTemplate = $('#galleryTemplate').html();
-products.showGallery = function(json){  
-  var template = Handlebars.compile(galleryTemplate);
-  $('#gallery').addClass('open').append( template(json) );
+products.showGallery = function(json){
+  wtf("---- products.showGallery");
+  wtf(json);
 };
-
-
-var detailsTemplate = $('#detailsTemplate').html();
-products.showDetails = function(json){  
+products.showDetails = function(json){
+  wtf("products.showDetails");
+  wtf(json);
   var template = Handlebars.compile(detailsTemplate);
+  wtf(template);
   var options = {
     backdrop : true,
     keyboard : true,
     show : true
   };
-  $('#auctionModal').html( template(json) ).modal(options);
+  // $('#auctionModal').( template(json) ).modal(options);
   // $('#myModal').modal(options)
 };
 
-products.getDetails = function(details){  
+products.getDetails = function(details){
+  wtf("products.getDetails");
   var jsonp = document.createElement('script');
-  jsonp.src = app.urlPrefix+'favorites?auctions='+details+'&callback=products.showDetails';
+  jsonp.src = app.urlPrefix+'item?auction='+details+'&callback=products.showGallery';
   document.head.appendChild(jsonp);
+  wtf(jsonp.src);
 };
 
 jQuery('#results').delegate( 'a.image_link', 'click', function(e){
@@ -347,13 +362,13 @@ jQuery('#view_options').delegate('a', 'click', function(e){
   el_sellers.addEventListener('change', search.changeSeller, true);
 
   // $('#results').delegate( '.fav_input', 'change', function(e){
-  //   console.log(this.value);
+  //   wtf(this.value);
   // });
 
-  if(!localStorage['favorites']) {    
-    localStorage.setItem('favorites', '[]');
+  if(!localStorage['item']) {
+    localStorage.setItem('item', '[]');
   };
-  if(!localStorage['seller'] || localStorage['seller'] === 'undefined') {    
+  if(!localStorage['seller'] || localStorage['seller'] === 'undefined') {
     localStorage['seller'] = 12;
   };
 
@@ -364,7 +379,7 @@ jQuery('#view_options').delegate('a', 'click', function(e){
 })();
 
 // HEADROOM NAVIGATION
-// (function(){  
+// (function(){
 //   var searchNav = document.querySelector("header");
 //   Headroom.options = {
 //     tolerance : {up : 5, down : 0 },

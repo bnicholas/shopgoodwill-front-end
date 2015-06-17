@@ -1,21 +1,40 @@
 var
-    gulp       = require('gulp'),
-    concat     = require('gulp-concat'),
-    coffee     = require('gulp-coffee'),
-    uglify     = require('gulp-uglify'),
-    sass       = require('gulp-sass'),
-    // sass       = require('gulp-ruby-sass'),
-    minifyCSS  = require('gulp-minify-css'),
-    prefix     = require('gulp-autoprefixer'),
-    jshint     = require('gulp-jshint'),
-    gulpFilter = require('gulp-filter'),
-    flatten    = require('gulp-flatten'),
-    clean      = require('gulp-clean'),
-    rename     = require('gulp-rename'),
-    filter     = gulpFilter('**/*.js', '!**/*.min.js');
+  gulp       = require('gulp'),
+  plumber    = require('gulp-plumber'),
+  http       = require('http'),
+  rename     = require('gulp-rename'),
+  ecstatic   = require('ecstatic');
+  watch      = require('gulp-watch'),
+  concat     = require('gulp-concat'),
+  serverport = 8080,
+  coffee     = require('gulp-coffee'),
+  uglify     = require('gulp-uglify'),
+  sass       = require('gulp-ruby-sass'),
+  minifyCSS  = require('gulp-minify-css'),
+  rename     = require('gulp-rename'),
+  flatten    = require('gulp-flatten'),
+  prefix     = require("gulp-autoprefixer"),
+  jshint     = require('gulp-jshint'),
+  gulpFilter = require('gulp-filter'),
+  filter     = gulpFilter('**/*.js', '!**/*.min.js');
+  clean      = require('gulp-clean');
 
+var
+  browserSync = require('browser-sync'),
+  reload      = browserSync.reload;
 
-var angular_head = [    
+var onError = function (err) {
+  console.log("YO SUCKA!!!!!!!!!!!!!!");
+  console.log(err);
+  console.log("----------------------");
+};
+
+var wrench = {
+  inherit: true,
+  errorHandler: onError
+}
+
+var angular_head = [
   './bower_components/jquery/jquery.js'
   ,'./bower_components/get-style-property/get-style-property.js'
   ,'./bower_components/angular/angular.js'
@@ -57,27 +76,46 @@ var scripts_foot = [
   ,'./javascripts/vanilla/coffee/favorites.coffee'
 ];
 
+gulp.task('browser-sync', function() {
+  browserSync({
+    proxy: "http://localhost:"+serverport
+    // server: { baseDir: "./" }
+  });
+});
+
 gulp.task('javascript', function() {
   gulp.src(angular_head)
+  .pipe(plumber(wrench))
   .pipe(uglify())
   .pipe(concat('ang-head.min.js'))
-  .pipe(gulp.dest('./javascripts/'));
-  
+  .pipe(gulp.dest('./javascripts/'))
+  .pipe(plumber.stop())
+  .pipe(reload({stream:true}));
+
   gulp.src(vendor_foot)
+  .pipe(plumber(wrench))
   .pipe(uglify())
   .pipe(concat('vendor-foot.min.js'))
-  .pipe(gulp.dest('./javascripts/'));
-  
+  .pipe(gulp.dest('./javascripts/'))
+  .pipe(plumber.stop())
+  .pipe(reload({stream:true}));
+
   gulp.src(vendor_head)
+  .pipe(plumber(wrench))
   // .pipe(uglify())
   .pipe(concat('vendor-head.min.js'))
-  .pipe(gulp.dest('./javascripts/'));
-  
+  .pipe(gulp.dest('./javascripts/'))
+  .pipe(plumber.stop())
+  .pipe(reload({stream:true}));
+
   gulp.src(scripts_foot)
+  .pipe(plumber(wrench))
   .pipe(concat('js-foot.coffee'))
   .pipe(coffee())
   // .pipe(uglify())
-  .pipe(gulp.dest('./javascripts/'));
+  .pipe(gulp.dest('./javascripts/'))
+  .pipe(plumber.stop())
+  .pipe(reload({stream:true}));
 });
 
 gulp.task('sass', function() {
@@ -86,13 +124,32 @@ gulp.task('sass', function() {
   // .pipe(prefix("last 1 version", "> 1%"))
   // .pipe(minifyCSS())
   // .pipe(rename('styles.min.css'))
-  .pipe(gulp.dest('./styles/'));
+  .pipe(gulp.dest('./styles/'))
+  .pipe(reload({stream:true}));
   // ("last 1 version", "> 1%", "ie 8", "ie 7")
 });
 
-gulp.watch('./styles/sass/*.sass', ['sass']);
-// gulp.watch('./javascripts/*/*.js', ['javascript']);
-gulp.watch('./javascripts/**/*.coffee', ['javascript']);
-// gulp.watch('./javascripts/plain.js', ['vendorjs']);
+gulp.task('html', function (){
+  gulp.src('./index.html')
+  .pipe(gulp.dest('./'))
+  .pipe(reload({stream:true}));
+});
 
-gulp.task('default', ['sass', 'javascript']);
+gulp.task('serve', function () {
+  // http.createServer(ecstatic({ root: __dirname + '/public' })).listen(serverport);
+  http.createServer(
+    ecstatic({ root: __dirname })).listen(serverport);
+    // lrserver.listen(livereloadport);
+});
+
+gulp.task('watch', function (reload) {
+  gulp.watch('./styles/sass/*.sass', ['sass']);
+  gulp.watch('./javascripts/**/*.coffee', ['javascript']);
+  gulp.watch('./javascripts/plain.js', reload({stream:true}));
+  // gulp.watch('public/sass/**/*.scss', ['sass']);
+  gulp.watch('./index.html', ['html']);
+  // gulp.watch('public/img/svg-dirty/*.svg', ['SVG']);
+});
+
+
+gulp.task('default', ['sass', 'javascript', 'browser-sync', 'serve', 'html']);

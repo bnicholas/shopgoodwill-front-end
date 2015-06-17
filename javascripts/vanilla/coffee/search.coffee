@@ -1,8 +1,10 @@
 # REQUIRES jquery, underscore, Products, App
 
 # SEARCH ------------------------
+console.log "YO YO YO"
+
 search =
-  
+
   page: 1
   pages: []
 
@@ -31,15 +33,15 @@ search =
         success: (data)->
           # JSON.parse(categories.responseText)
           data.forEach (value) ->
-            
+
             # IF IT'S A TOP TOP LEVEL CATEGORY
             if value.parentId is `undefined`
               theDiv = document.getElementById("top-categories")
-            
+
             # OTHERWISE FIND THE RIGHT SUB-CATEGORY ELEMENT
             else
               theDiv = document.getElementById("parent_" + value.parentId)
-            
+
             # IF SAID ELEMENT ISN'T THERE ... MAKE IT
             unless theDiv
               container = document.getElementById("categories")
@@ -48,7 +50,7 @@ search =
               newDiv.setAttribute "class", "child_categories"
               container.appendChild newDiv
               theDiv = document.getElementById("parent_" + value.parentId)
-            
+
             # CREATE THE INPUT
             catInput = document.createElement("input")
             catInput.id = "cat_" + value.catId
@@ -58,14 +60,14 @@ search =
             catInput.setAttribute "checked", true  if catInput.value is localStorage["category"]
             catInput.setAttribute "name", "category"
             catInput.addEventListener "change", search.changeCat, true
-            
+
             # CREATE THE LABEL
             catLabel = document.createElement("label")
             catLabel.setAttribute "title", value.catId
             catLabel.setAttribute "for", "cat_" + value.catId
             catLabel.innerHTML = value.catName
             catLabel.addEventListener "click", search.clickCat, false
-            
+
             # APPEND NEW ITEM TO APPROPRIATE Div
             theDiv.appendChild catInput
             theDiv.appendChild catLabel
@@ -77,7 +79,7 @@ search =
     el_results.innerHTML = ""  if search.page is 1
     el_results.classList.remove "busy"
     products.loading = true
-    
+
     #cardTmpl = Handlebars.compile(cardTemplate)
     template = app.getTemplate('/templates/auction.handlebars')
     $("#results").append template(json)
@@ -99,7 +101,7 @@ search =
     else
       search.features = false
       url = app.urlPrefix + "auctions?seller=" + search.seller + "&page=" + search.page + "&category=" + search.category + "&term=" + search.term + "&callback=search.displayResults"
-    
+
     #console.log(url);
     jsonp.src = url
     document.head.appendChild jsonp
@@ -155,5 +157,3 @@ search =
 throttled = _.throttle(search.scroll, 100)
 
 $(window).scroll search.scroll
-
-

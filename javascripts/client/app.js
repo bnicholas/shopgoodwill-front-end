@@ -1,6 +1,6 @@
 'use strict';
 
-var urlPrefix = "http://goodwillapi.herokuapp.com/";
+var urlPrefix = "http://localhost:5000/";
 
 // switch(window.location.hostname) {
 //     case 'localhost':
